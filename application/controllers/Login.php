@@ -132,6 +132,12 @@ class Login extends CI_Controller
             redirect('login/login');
         }
     }
+
+    public function lpPass()
+    {
+        var_dump($_POST);
+    }
+
     public function logout()
     {
         $this->session->unset_userdata('username');

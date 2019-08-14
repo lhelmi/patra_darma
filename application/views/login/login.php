@@ -88,13 +88,9 @@
                             <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Log In</button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                            <div class="social"> <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a> </div>
-                        </div>
-                    </div>
+
                 </form>
-                <form class="form-horizontal" id="recoverform" action="index.html">
+                <form class="form-horizontal" id="recoverform" method="post" action="<?= base_url('login/lpPass'); ?>">
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <h3>Recover Password</h3>
@@ -103,7 +99,7 @@
                     </div>
                     <div class="form-group ">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" required="" placeholder="Email">
+                            <input class="form-control" type="text" required="" name="email" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-group text-center m-t-20">
