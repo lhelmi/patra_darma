@@ -43,7 +43,10 @@
                     <li class="devider"></li>
 
                     
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>login.html" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
+                    <li><a href="<?= base_url('KategoriMasalah') ?>" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Kategori Masalah</span></a></li>
+                    <li class="devider"></li>
+
+                    <li><a href="<?= base_url('Pesan') ?>" class="waves-effect"><i class="mdi mdi-gmail fa-fw"></i> <span class="hide-menu">Pesan</span></a></li>
                     <li class="devider"></li>
                 </ul>
             </div>
