@@ -15,7 +15,14 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <div class="flash-data" data-flash = "<?= $this->session->flashdata('message') ?>"></div>
-                    <a href="#" id="modaltambah" data-toggle="modal" data-target="#responsive-modal"><h3 class="box-title m-b-30">Tambah Data</h3></a>
+                    <div class="wow" style="margin-bottom: 10px">
+                        <button type="button" id="modaltambah" data-toggle="modal" data-target="#responsive-modal" class="btn btn-success waves-effect waves-light m-r-10">
+                            <i class="fa fa-plus m-r-5"></i>
+                            <span>Tambah Data</span>
+                        </button>
+                    </div>
+                    
+                    <!-- <a href="#" id="modaltambah" data-toggle="modal" data-target="#responsive-modal"><h3 class="box-title m-b-30">Tambah Data</h3></a> -->
                     
                     <div class="table-responsive">
                         <table id="myTable" class="table table-striped table color-bordered-table danger-bordered-table">
@@ -34,12 +41,13 @@
                                         <td class="text-center"><?= $km['NamaKategori'] ?></td>
                                         <td class="text-center"><?= $km['JenisPerkara'] ?></td>
                                         <td class="text-center">
-                                            <a href="#" data-toggle="modal" id="modalubah" data-target="#responsive-modal" data-id="<?= $km['IdKategori']; ?>" >
-                                                <span class="circle circle-sm bg-primary di"><i class="ti-pencil-alt"></i></span>
-                                            </a>
-                                            <a href="#" id="btndelete" data-id="<?= $km['IdKategori']; ?>" >
-                                                <span class="circle circle-sm bg-danger di"><i class="ti-trash"></i></span>
-                                            </a>
+                                            <button type="button" class="btn btn-primary btn-circle" data-toggle="modal" id="modalubah" data-target="#responsive-modal" data-id="<?= $km['IdKategori']; ?>">
+                                                <i class="ti-pencil-alt"></i>
+                                            </button>
+
+                                            <button type="button" class="btn btn-warning btn-circle" data-toggle="modal" id="btndelete" data-id="<?= $km['IdKategori']; ?>">
+                                                <i class="ti-trash"></i>
+                                            </button>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -48,36 +56,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form id="frmid">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Tambah Data <?= $title; ?></h4>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" class="form-control" id="IdKategori" name="IdKategori">
-                    
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Nama Kategori:</label>
-                        <input type="text" class="form-control" id="NamaKategori" name="NamaKategori">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="recipient-name" class="control-label">Jenis Perkara:</label>
-                        <input type="text" class="form-control" id="JenisPerkara" name="JenisPerkara">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="submit" id="submit" class="btn btn-danger waves-effect waves-light">Simpan</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>

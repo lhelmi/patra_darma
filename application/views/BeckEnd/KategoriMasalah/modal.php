@@ -1,3 +1,39 @@
+<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="frmid">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Tambah Data <?= $title; ?></h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="form-control" id="IdKategori" name="IdKategori">
+                    
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Nama Kategori:</label>
+                        <input type="text" class="form-control" id="NamaKategori" name="NamaKategori">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Jenis Perkara:</label>
+                        <input type="text" class="form-control" id="JenisPerkara" name="JenisPerkara">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-inverse waves-effect" data-dismiss="modal">
+                    	<i class="fa fa-times"></i>
+                        <span>Batal</span>
+                	</button>
+                    <button type="submit" name="submit" id="submit" class="btn btn-success waves-effect waves-light">
+	                    <i class="fa fa-check"></i>
+	                    <span>Simpan</span>
+                	</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
 	$(function(){
 
