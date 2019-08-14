@@ -32,6 +32,7 @@
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/calendar/dist/cal-init.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="<?= base_url('assets/BackEnd/') ?>js/custom.min.js"></script>
+    <script src="<?= base_url('assets/BackEnd/') ?>js/jasny-bootstrap.js"></script>
 
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
     <!-- start - This is for export functionality only -->
