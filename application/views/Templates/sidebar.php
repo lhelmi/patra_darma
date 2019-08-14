@@ -57,6 +57,9 @@
                     <li><a href="<?= base_url('Pengacara') ?>" class="waves-effect"><i class="mdi mdi-tie fa-fw"></i> <span class="hide-menu">Pengacara</span></a></li>
                     <li class="devider"></li>
 
+                    <li><a href="<?= base_url('Pengacara') ?>" class="waves-effect"><i class="mdi mdi-tie fa-fw"></i> <span class="hide-menu">Pengacara</span></a></li>
+                    <li class="devider"></li>
+
                     <li><a href="<?= base_url('Pesan') ?>" class="waves-effect"><i class="mdi mdi-gmail fa-fw"></i> <span class="hide-menu">Pesan</span></a></li>
                     <li class="devider"></li>
                 </ul>
