@@ -128,14 +128,9 @@ class Login extends CI_Controller
             }
         } else {
             $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
-            ID/Email tidak ditemukan, coba cek kembali!</div>');
+            ID/Email tidak ditemukan, silahkan cek kembali!</div>');
             redirect('login/login');
         }
-    }
-
-    public function lpPass()
-    {
-        var_dump($_POST);
     }
 
     public function logout()

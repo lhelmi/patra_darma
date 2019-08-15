@@ -52,6 +52,26 @@
                             </div>
                                 
                         </div>
+                        <div class="form-group" id="dynamic_field">
+                            <label class="col-md-12">Bidang Keahlian</label>
+                            <?php foreach ($Bk as $km) : ?>
+                                <div class="col-md-10">
+                                    <input type="hidden" class="form-control" id="IdBk" name="IdBk[]" value="<?= $km['IdBk'] ?>"> 
+                                    <input type="text" class="form-control" id="NamaBk1" name="NamaBk1[]" value="<?= $km['NamaBk'] ?>">
+                                    <?php echo form_error('NamaBk1[]', '<small class="text-danger pl-3">', '</small>'); ?>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" name="add" id="add" class="btn btn-warning">Hapus</button>
+                                </div>
+                            <?php endforeach; ?>
+                            <div class="col-md-10 m-t-30">
+                                <input type="text" class="form-control" id="NamaBk" name="NamaBk[]" value=""> 
+                            </div>
+                            <div class="col-md-2  m-t-30">
+                                <button type="button" name="add" id="add" class="btn btn-primary">Tambah</button>
+                            </div>
+                                
+                        </div>
                         <div class="form-group">
                             <label class="col-md-12">Keterangan</label>
                             <div class="col-md-12">

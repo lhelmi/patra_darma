@@ -25,9 +25,13 @@ class Pengacara extends CI_Controller {
 	public function add()
 	{
 		$data['title'] = 'Tambah Data Pengacara';
+		$data['IdPeng'] = $this->Pengacara_model->get_kode();
 		
 		$this->_rules();
-
+		$this->form_validation->set_rules('NamaBk[]', 'NamaBk[]', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
+		if (empty($_FILES['Foto']['name'])) {
+			$this->form_validation->set_rules('Foto', 'Foto', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
+		}
 		if ($this->form_validation->run() == false) {
 			$this->load->view('Templates/head', $data);
 			$this->load->view('Templates/topbar', $data);
@@ -35,7 +39,7 @@ class Pengacara extends CI_Controller {
 			$this->load->view('BeckEnd/Pengacara/add', $data);
 			$this->load->view('Templates/footer', $data);
 		}else{
-			$upload_image = $_FILES['Foto']['name'];
+			$upload_image = $_FILES['Foto']['name'];	
 			if ($upload_image) {
 				$config['upload_path'] = './assets/BackEnd/img/profile/';
 				$config['allowed_types'] = 'gif|jpg|png';
@@ -49,8 +53,18 @@ class Pengacara extends CI_Controller {
 					echo $this->upload->display_errors();
 				}
 			}
+			
+			$postx = $this->input->post();
+			$Bk = array();
+            foreach($postx['NamaBk'] AS $key => $val){
+                $Bk[] = array(
+                    "NamaBk" => $postx['NamaBk'][$key],
+                    "IdPengacara" => $postx['IdPengacara']
+                );
+            }
 
-			$datainsert['NamaPengacara'] = $this->input->post('NamaPengacara',TRUE);
+            $datainsert['IdPengacara'] = $this->input->post('IdPengacara',TRUE);
+            $datainsert['NamaPengacara'] = $this->input->post('NamaPengacara',TRUE);
 			$datainsert['Jk'] = $this->input->post('Jk',TRUE);
 			$datainsert['Email'] = $this->input->post('Email',TRUE);
 			$datainsert['NoHp'] = $this->input->post('NoHp',TRUE);
@@ -59,6 +73,7 @@ class Pengacara extends CI_Controller {
 			$datainsert['pengalaman'] = $this->input->post('pengalaman',TRUE);
 
 			$this->Pengacara_model->insert($datainsert);
+			$this->Pengacara_model->insert_Bk($Bk);
 			$this->session->set_flashdata('message', 'Berhasil ditambah!');
 			redirect('Pengacara');
 		}
@@ -68,8 +83,11 @@ class Pengacara extends CI_Controller {
 	{
 		$data['title'] = 'Ubah Data Pengacara';
 		$data['pengacara'] = $this->Pengacara_model->get_by_id($id);
+		$data['Bk'] = $this->Pengacara_model->Bk_by_id($id);
+		
 		if ($data['pengacara']) {
 			$this->_rules();
+			$this->form_validation->set_rules('NamaBk1[]', 'NamaBk1[]', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
 			if ($this->form_validation->run() == false) {
 				$this->load->view('Templates/head', $data);
 				$this->load->view('Templates/topbar', $data);
@@ -101,14 +119,36 @@ class Pengacara extends CI_Controller {
 					}
 				}
 
-				$datainsert['NamaPengacara'] = $this->input->post('NamaPengacara',TRUE);
+				$post = $this->input->post();
+				$BkUbah = array();
+	            foreach($post['NamaBk1'] AS $key => $val){
+	                $BkUbah[] = array(
+	                    "IdBk" => $post['IdBk'][$key],
+	                    "NamaBk" => $post['NamaBk1'][$key],
+	                );
+	            }
+	            $this->Pengacara_model->update_bk($BkUbah, 'IdBk');
+
+				$Bk = array();
+	            foreach($post['NamaBk'] AS $key => $val){
+	            	$Bk[] = array(
+	                    "NamaBk" => $post['NamaBk'][$key],
+	                    "IdPengacara" => $post['IdPengacara']
+	                );
+	                if ($post['NamaBk'][$key] !== '') {
+                    	$this->Pengacara_model->insert_Bk($Bk);
+                	}
+            	}
+            	
+	            $datainsert['NamaPengacara'] = $this->input->post('NamaPengacara',TRUE);
 				$datainsert['Jk'] = $this->input->post('Jk',TRUE);
 				$datainsert['Email'] = $this->input->post('Email',TRUE);
 				$datainsert['NoHp'] = $this->input->post('NoHp',TRUE);
 				$datainsert['keterangan'] = $this->input->post('keterangan',TRUE);
 				$datainsert['pendidikan'] = $this->input->post('pendidikan',TRUE);
 				$datainsert['pengalaman'] = $this->input->post('pengalaman',TRUE);
-
+				
+				
 				$this->Pengacara_model->update($this->input->post('IdPengacara',TRUE) ,$datainsert);
 				$this->session->set_flashdata('message', 'Berhasil diubah!');
 				redirect('Pengacara');

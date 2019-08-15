@@ -90,7 +90,7 @@
                     </div>
 
                 </form>
-                <form class="form-horizontal" id="recoverform" method="post" action="<?= base_url('login/lpPass'); ?>">
+                <form class="form-horizontal" id="recoverform" method="post" action="<?= base_url('lupapassword/kirim_link'); ?>">
                     <div class="form-group ">
                         <div class="col-xs-12">
                             <h3>Recover Password</h3>
