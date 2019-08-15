@@ -18,6 +18,7 @@
                 <div class="white-box">
                     <h3 class="box-title m-b-30">Form</h3>
                     <form class="form-material" action="<?= base_url('Pengacara/add') ?>" enctype="multipart/form-data" method="post">
+                        <input type="hidden" name="IdPengacara" value="<?= $IdPeng ?>">
                         <div class="form-group">
                             <label class="col-md-12">Nama Pengacara</label>
                             <div class="col-md-12">
@@ -48,6 +49,16 @@
                             <div class="col-md-12">
                                 <input type="text" class="form-control" id="NoHp" name="NoHp" value="<?= set_value('NoHp'); ?>">
                                 <?php echo form_error('NoHp', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                        </div>
+                        <div class="form-group" id="dynamic_field">
+                            <label class="col-md-12">Bidang Keahlian</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="NamaBk" name="NamaBk[]" value="<?= set_value('NamaBk[]'); ?>">
+                                <?php echo form_error('NamaBk[]', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" name="add" id="add" class="btn btn-primary">Tambah</button>
                             </div>
                                 
                         </div>
@@ -81,7 +92,8 @@
                                     <?php echo form_error('Foto', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Simpan</button>
+                        
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-check"></i> Simpan</button>
                         <a href="<?= base_url('Pengacara') ?>" type="button" class="btn btn-inverse waves-effect waves-light">Batal</a>
                     </form>
                 </div>

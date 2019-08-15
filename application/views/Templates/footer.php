@@ -90,6 +90,22 @@
     });
 
     </script>
+    <script>  
+        
+    $(function(){
+ 
+      var i=1;  
+      $('#dynamic_field').on('click', '#add', function(){
+           i++;  
+           $('#dynamic_field').append('<div class="col-md-10" id="row'+i+'"><input type="text" class="form-control" id="NamaBk" name="NamaBk[]"></div><div class="col-md-2" id="rowx'+i+'"><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">Hapus</button></div>');  
+      });  
+      $(document).on('click', '.btn_remove', function(){  
+           var button_id = $(this).attr("id");   
+           $('#row'+button_id+'').remove();  
+           $('#rowx'+button_id+'').remove();
+      });   
+ });  
+ </script>
     <!-- <script src="<?php // echo base_url('assets/BackEnd/') ?>js/dashboard1.js"></script> -->
     <!-- Custom tab JavaScript -->
     <script src="<?= base_url('assets/BackEnd/') ?>js/cbpFWTabs.js"></script>
