@@ -114,6 +114,7 @@
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/toast-master/js/jquery.toast.js"></script>
 
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/sweetalert/sweetalert.min.js"></script>
+    <script src="<?= base_url('assets/BackEnd/') ?>js/mask.js"></script>
 
     <!--Style Switcher -->
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>

@@ -41,6 +41,12 @@ class Pengacara_model extends CI_Model
     	return $this->db->get('pengacara')->row_array();
 	}
 
+	function get_by_idnonarray($id)
+	{	
+		$this->db->where('IdPengacara', $id);
+    	return $this->db->get('pengacara')->row();
+	}
+
 	function Bk_by_id($id)
 	{	
 		$this->db->join('bidangkeahlian', 'bidangkeahlian.IdPengacara = Pengacara.IdPengacara');
@@ -63,6 +69,11 @@ class Pengacara_model extends CI_Model
     {
     	$this->db->where('IdPengacara', $id);
         $this->db->delete('pengacara');
+    }
+    function BKdelete($id)
+    {
+    	$this->db->where('IdBk', $id);
+        $this->db->delete('bidangkeahlian');
     }
 }
 

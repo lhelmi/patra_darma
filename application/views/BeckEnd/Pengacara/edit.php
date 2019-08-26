@@ -15,9 +15,10 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
+                <div class="flash-data" data-flash = "<?= $this->session->flashdata('message') ?>"></div>
                 <div class="white-box">
                     <h3 class="box-title m-b-30">Form</h3>
-                    <form class="form-material" action="<?= base_url('Pengacara/edit/'.$pengacara["IdPengacara"]) ?>" enctype="multipart/form-data" method="post">
+                    <form class="form-material" action="<?= base_url('administrator/Pengacara/edit/'.$pengacara["IdPengacara"]) ?>" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="IdPengacara" value="<?= $pengacara['IdPengacara']; ?>">
                         <div class="form-group">
                             <label class="col-md-12">Nama Pengacara</label>
@@ -61,7 +62,7 @@
                                     <?php echo form_error('NamaBk1[]', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="button" name="add" id="add" class="btn btn-warning">Hapus</button>
+                                    <button type="button" name="btndelete" id="btndelete" class="btn btn-warning btndelete" id="btndelete" data-id="<?= $km['IdBk']; ?>" >Hapus</button>
                                 </div>
                             <?php endforeach; ?>
                             <div class="col-md-10 m-t-30">
@@ -103,7 +104,7 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Simpan</button>
-                        <a href="<?= base_url('Pengacara') ?>" type="button" class="btn btn-inverse waves-effect waves-light">Batal</a>
+                        <a href="<?= base_url('administrator/Pengacara') ?>" type="button" class="btn btn-inverse waves-effect waves-light">Batal</a>
                     </form>
                 </div>
             </div>

@@ -16,7 +16,7 @@
                 <div class="white-box">
                     <div class="flash-data" data-flash = "<?= $this->session->flashdata('message') ?>"></div>
                     <div class="wow" style="margin-bottom: 10px">
-                        <a href="<?= base_url('Pengacara/add') ?>" type="button" class="btn btn-success waves-effect waves-light m-r-10">
+                        <a href="<?= base_url('administrator/Pengacara/add') ?>" type="button" class="btn btn-success waves-effect waves-light m-r-10">
                             <i class="fa fa-plus m-r-5"></i>
                             <span>Tambah Data</span>
                         </a>
@@ -45,7 +45,7 @@
                                         <td class="text-center"><?= $km['Jk'] ?></td>
                                         <td class="text-center"><?= $km['Foto'] ?></td>
                                         <td class="text-center">
-                                            <a class="btn btn-primary btn-circle" href="<?= base_url('Pengacara/edit/').$km['IdPengacara'] ?>">
+                                            <a class="btn btn-primary btn-circle" href="<?= base_url('administrator/Pengacara/edit/').$km['IdPengacara'] ?>">
                                                 <i class="ti-pencil-alt"></i>
                                             </a>
 
