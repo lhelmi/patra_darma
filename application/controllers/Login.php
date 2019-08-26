@@ -30,14 +30,15 @@ class Login extends CI_Controller
         $password = $this->input->post('password');
 
         $pengacara = $this->db->query("select * from pengacara where IdPengacara='" . $id . "' or Email='" . $id . "'")->row_array();
+        $admin = $this->db->query("select * from admin where Email='" . $id . "'")->row_array();
         if ($pengacara) {
-
             if (password_verify($password, $pengacara['password'])) {
                 $data = [
                     'id' => $pengacara['IdPengacara'],
                     'name' => $pengacara['NamaPengacara'],
                     'foto' => $pengacara['Foto'],
-                    'email' => $pengacara['Email']
+                    'email' => $pengacara['Email'],
+                    'role' => 'pengacara'
                 ];
                 $this->session->set_userdata($data);
                 echo "BErhasil Lpgin";
@@ -46,7 +47,23 @@ class Login extends CI_Controller
                     Password salah, silahkan ulangi!</div>');
                 redirect('login');
             }
-        } else {
+        } elseif ($admin) {
+            if (password_verify($password, $admin['Password'])) {
+                $data = [
+                    'id' => $admin['id'],
+                    'name' => $admin['Nama'],
+                    'foto' => $admin['Foto'],
+                    'email' => $admin['Email'],
+                    'role' => $admin['role'],
+                ];
+                $this->session->set_userdata($data);
+                echo "BErhasil Lpgin";
+            } else {
+                $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
+                    Password salah, silahkan ulangi!</div>');
+                redirect('login');
+            }
+        }else{
             $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
             ID/Email tidak ditemukan, silahkan cek kembali!</div>');
             redirect('login');
@@ -60,6 +77,11 @@ class Login extends CI_Controller
         $this->session->set_flashdata('message', '<div class=" alert alert-success" role="alert">
 		You have been logged out</div>');
         redirect('login');
+    }
+
+    public function blocked()
+    {
+        $this->load->view('Templates/blocked');
     }
 }
 

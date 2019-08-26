@@ -12,6 +12,9 @@ class Pengacara extends CI_Controller {
 
 	public function index()
 	{
+		if ($this->session->userdata('role') == 'pengacara') {
+			redirect('login/blocked');
+		}
 		$data['title'] = 'Pengacara';
 		$data['Pengacara'] = $this->Pengacara_model->get_all();
 		
@@ -25,6 +28,10 @@ class Pengacara extends CI_Controller {
 
 	public function add()
 	{
+		if ($this->session->userdata('role') == 'pengacara') {
+			redirect('login/blocked');
+		}
+
 		$data['title'] = 'Tambah Data Pengacara';
 		$data['IdPeng'] = $this->Pengacara_model->get_kode();
 		$data['password'] = base64_encode(random_bytes(8));
@@ -104,6 +111,9 @@ class Pengacara extends CI_Controller {
 
 	public function edit($id)
 	{
+		if ($this->session->userdata('role') !== 'pengacara') {
+			redirect('login/blocked');
+		}
 		$data['title'] = 'Ubah Data Pengacara';
 		$data['pengacara'] = $this->Pengacara_model->get_by_id($id);
 		$row = $this->Pengacara_model->get_by_idnonarray($id);
@@ -198,7 +208,7 @@ class Pengacara extends CI_Controller {
 				
 				$this->Pengacara_model->update($this->input->post('IdPengacara',TRUE) ,$datainsert);
 				$this->session->set_flashdata('message', 'Berhasil diubah!');
-				redirect('administrator/Pengacara');
+				redirect('administrator/Pengacara/edit/'.$id);
 			}	
 		}else{
 			$this->session->set_flashdata('message', 'Data Tidak Ada');
@@ -209,6 +219,9 @@ class Pengacara extends CI_Controller {
 
 	public function delete()
 	{
+		if ($this->session->userdata('role') == 'pengacara') {
+			redirect('login/blocked');
+		}
 		$data['id'] = $_POST['id'];
 		$data['redirect'] = 'administrator/Pengacara';
 		$this->Pengacara_model->delete($_POST['id']);
@@ -218,6 +231,10 @@ class Pengacara extends CI_Controller {
 
 	public function BKdelete()
 	{
+		if ($this->session->userdata('role') !== 'pengacara') {
+			redirect('login/blocked');
+		}
+
 		$data['id'] = $_POST['id'];
 		// $data['redirect'] = 'Pengacara';
 		$this->Pengacara_model->BKdelete($_POST['id']);
