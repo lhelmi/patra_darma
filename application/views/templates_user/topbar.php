@@ -28,7 +28,7 @@
                         <li class="menu-active"><a href="<?php echo base_url('user/beranda') ?>">Beranda</a></li>
 
                         <li><a href="<?php echo base_url('user/info_hukum') ?>">Informasi Hukum</a></li>
-                        <li class="menu-has-children"><a href="">Informasi Minyak</a>
+                        <li><a href="<?php echo base_url('user/info_minyak') ?>">Informasi Minyak</a>
 
                         </li>
                         <li><a href="<?php echo base_url('user/konsultasi') ?>">Konsultasi</a></li>
