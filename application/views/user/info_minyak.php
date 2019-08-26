@@ -6,7 +6,7 @@
 			<div class="about-content col-lg-12">
 
 				<h1 class="text-white">
-					PT. Patra Darma Wijaya Bandung
+					Informasi Minyak
 				</h1>
 				<p class="text-white">
 
@@ -94,115 +94,6 @@
 	</div>
 </section>
 <!-- End home-about Area -->
-
-
-<!-- Start service Area -->
-<section class="service-area section-gap" id="service">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-12 pb-30 header-text text-center">
-				<h1 class="mb-10">Our Capturing Market Sectors</h1>
-				<p>
-					Who are in extremely love with eco friendly system..
-				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-4">
-				<div class="single-service">
-					<div class="thumb">
-						<img src="img/s1.jpg" alt="">
-					</div>
-					<h4>Automotive Engineering</h4>
-					<p>
-						inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="single-service">
-					<div class="thumb">
-						<img src="img/s2.jpg" alt="">
-					</div>
-					<h4>Construction & Engineering</h4>
-					<p>
-						inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="single-service">
-					<div class="thumb">
-						<img src="img/s3.jpg" alt="">
-					</div>
-					<h4>Industrial Engineering</h4>
-					<p>
-						inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End service Area -->
-
-
-<!-- Start faq Area -->
-<section class="faq-area section-gap relative">
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row justify-content-center align-items-center">
-			<div class="col-lg-3 col-md-6">
-				<div class="single-faq">
-					<div class="circle">
-						<div class="inner"></div>
-					</div>
-					<h5><span class="counter">2</span>K+</h5>
-					<p>
-						Projects Completed
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="single-faq">
-					<div class="circle">
-						<div class="inner"></div>
-					</div>
-					<h5><span class="counter">5.5</span>K</h5>
-					<p>
-						Total Employees
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="single-faq">
-					<div class="circle">
-						<div class="inner"></div>
-					</div>
-					<h5 class="counter">959</h5>
-					<p>
-						Happy Clients
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="single-faq">
-					<div class="circle">
-						<div class="inner"></div>
-					</div>
-					<h5 class="counter">367</h5>
-					<p>
-						Tickets Submited
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End faq Area -->
-
-
-
 <!-- Start blog Area -->
 <section class="blog-area section-gap" id="blog">
 	<div class="container">
