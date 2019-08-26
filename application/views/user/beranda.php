@@ -208,9 +208,9 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-12 pb-30 header-text">
-				<h1>Latest posts from our Blog</h1>
+				<h1>Minyak Dan Gas Bumi</h1>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore et dolore magna aliqua.
+					Industri sektor minyak dan gas meliputi kegiatan eksplorasi, produksi, pengolahan, transportasi, dan pemasaran. Industri ini dibagi menjadi dua kategori, yaitu kegiatan hulu (upstream) dan kegiatan hilir (downstream). Kegiatan usaha hulu migas adalah kegiatan eksplorasi dan produksi, sedangkan kegiatan usaha hilir adalah pengolahan, transportasi, dan pemasaran.
 				</p>
 			</div>
 		</div>
@@ -226,15 +226,15 @@
 					</div>
 					<div class="meta">
 						13th Dec
-						<span class="lnr lnr-heart"></span> 15
-						<span class="lnr lnr-bubble"></span> 04
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
 					</div>
 				</div>
-				<a href="#">
-					<h4>Portable Fashion for young women</h4>
+				<a href="<?= base_url('user/beranda/minyak_bumi'); ?>" target="_blank">
+					<h4>Minyak Bumi</h4>
 				</a>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
+					Menurut pasal 1 ayat 1 Undang- Undang No 22 tahun 2001 tentang Minyak dan Gas Bumi, Minyak Bumi adalah hasil proses alami berupa hidrokarbon yang dalam kondisi tekanan dan temperatur atmosfer berupa fasa cair atau padat, termasuk [. . .]
 				</p>
 			</div>
 			<div class="single-blog col-lg-4 col-md-4">
@@ -248,15 +248,16 @@
 					</div>
 					<div class="meta">
 						13th Dec
-						<span class="lnr lnr-heart"></span> 15
-						<span class="lnr lnr-bubble"></span> 04
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
 					</div>
 				</div>
-				<a href="#">
-					<h4>Portable Fashion for young women</h4>
+				<a href="<?= base_url('user/beranda/gas_bumi'); ?>" target="_blank">
+					<h4>Gas Bumi</h4>
 				</a>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
+					Dalam kamus besar bahasa Indonesia, Gas bumi sering juga disebut sebagai gas alam atau gas rawa, adalah bahan bakar fosilberbentuk gas yang terutama terdiri dari metana CH4). Ia dapat ditemukan di ladang minyak, [. . .]
+
 				</p>
 			</div>
 			<div class="single-blog col-lg-4 col-md-4">
@@ -270,15 +271,153 @@
 					</div>
 					<div class="meta">
 						13th Dec
-						<span class="lnr lnr-heart"></span> 15
-						<span class="lnr lnr-bubble"></span> 04
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
 					</div>
 				</div>
-				<a href="#">
-					<h4>Portable Fashion for young women</h4>
+				<a href="<?= base_url('user/beranda/kegiatan_usaha_hulu'); ?>" target="_blank">
+					<h4>Kegiatan Usaha Hulu</h4>
 				</a>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea.
+					Dalam dunia pertambangan Minyak dan Gas Bumi, ada dua kegiatan usaha, yaitu Kegiatan Usaha Hulu dan Kegiatan Usaha Hilir. menurut pasal 1 ayat 7 UU No. 22 tahun 2001 tentang Minyak dan Gas [. . .]
+				</p>
+			</div>
+
+			<div class="single-blog col-lg-4 col-md-4">
+				<div class="thumb">
+					<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">
+				</div>
+				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<img class="img-fluid" src="img/user.png" alt="">
+						<a href="#"><span>Mark Wiens</span></a>
+					</div>
+					<div class="meta">
+						13th Dec
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
+					</div>
+				</div>
+				<a href="<?= base_url('user/beranda/kegiatan_usaha_hilir'); ?>" target="_blank">
+					<h4>Kegiatan Usaha Hilir</h4>
+				</a>
+				<p>
+					Kegiatan Usaha Hilir dilaksanakan oleh Badan Usaha yang telah memiliki Izin Usaha yang dikeluarkan oleh Menteri ESDM. Direktorat Jenderal Minyak dan Gas Bumi. Izin Usaha Kegiatan Usaha Hilir dibedakan menjadi: a. Izin Usaha Pengolahan [. . .]
+				</p>
+			</div>
+
+			<div class="single-blog col-lg-4 col-md-4">
+				<div class="thumb">
+					<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">
+				</div>
+				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<img class="img-fluid" src="img/user.png" alt="">
+						<a href="#"><span>Mark Wiens</span></a>
+					</div>
+					<div class="meta">
+						13th Dec
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
+					</div>
+				</div>
+				<a href="<?= base_url('user/beranda/eksplorasi_dan_eksploitasi'); ?>" target="_blank">
+					<h4>Eksplorasi Dan Eksploitasi Dalam Perundang-Undangan Indonesia</h4>
+				</a>
+				<p>
+					Pengusahaan pertambangan migas di Indonesia mengalami banyak perubahan. Namun yang paling banyak perubahannya adalah dari sektor kuasa pertambangan. Kuasa Pertambangan adalah wewnang yang diberikan kepada perusahaan negara untuk melaksanakan usaha pertambangan minyak dan [. . .]
+				</p>
+			</div>
+
+			<div class="single-blog col-lg-4 col-md-4">
+				<div class="thumb">
+					<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">
+				</div>
+				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<img class="img-fluid" src="img/user.png" alt="">
+						<a href="#"><span>Mark Wiens</span></a>
+					</div>
+					<div class="meta">
+						13th Dec
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
+					</div>
+				</div>
+				<a href="<?= base_url('user/beranda/penegakan_hukum'); ?>" target="_blank">
+					<h4>Penegakan Hukum dalam perspektif Sistem Peradilan Pidana</h4>
+				</a>
+				<p>
+					Penegakan hukum adalah proses dilakukannya upaya untuk tegaknya atau berfungsinya norma-norma hukum secara nyata sebagai pedoman perilaku dalam lalu lintas atau hubungan-hubungan hukum dalam kehidupan bermasyarakat dan bernegara. Ditinjau dari sudut subjeknya, penegakan [. . .]
+				</p>
+			</div>
+
+			<div class="single-blog col-lg-4 col-md-4">
+				<div class="thumb">
+					<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">
+				</div>
+				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<img class="img-fluid" src="img/user.png" alt="">
+						<a href="#"><span>Mark Wiens</span></a>
+					</div>
+					<div class="meta">
+						13th Dec
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
+					</div>
+				</div>
+				<a href="<?= base_url('user/beranda/tindak_pidana'); ?>" target="_blank">
+					<h4>Pengertian Tindak Pidana</h4>
+				</a>
+				<p>
+					Perbuatan Pidana menurut Moeljatno (2008: 77) adalah: pengertian perbuatan pidana adalah perbuatan yang dilarang oleh suatu aturan hukum larangan yang mana disertai ancaman (sangsi) yang berupa pidana tertentu bagi barang siapa melanggar larangan tersebut. [. . .]
+				</p>
+			</div>
+
+			<div class="single-blog col-lg-4 col-md-4">
+				<div class="thumb">
+					<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">
+				</div>
+				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<img class="img-fluid" src="img/user.png" alt="">
+						<a href="#"><span>Mark Wiens</span></a>
+					</div>
+					<div class="meta">
+						13th Dec
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
+					</div>
+				</div>
+				<a href="<?= base_url('user/beranda/tujuan_pemidanaan'); ?>" target="_blank">
+					<h4>Tujuan Pemidanaan</h4>
+				</a>
+				<p>
+					Pada umumnya tujuan hukum pidana untuk melindungi kepentingan individu atau melindungi hak asasi manusia dan melindungi kepentingan masyarakat maupun negara dari perbuatan kejahatan atau perbuatan tercela yang merugikan individu, masyarakat dan negara, [. . .]
+				</p>
+			</div>
+
+			<div class="single-blog col-lg-4 col-md-4">
+				<div class="thumb">
+					<img class="f-img img-fluid mx-auto" src="img/b3.jpg" alt="">
+				</div>
+				<div class="bottom d-flex justify-content-between align-items-center flex-wrap">
+					<div>
+						<img class="img-fluid" src="img/user.png" alt="">
+						<a href="#"><span>Mark Wiens</span></a>
+					</div>
+					<div class="meta">
+						13th Dec
+						<!-- <span class="lnr lnr-heart"></span> 15
+						<span class="lnr lnr-bubble"></span> 04 -->
+					</div>
+				</div>
+				<a href="<?= base_url('user/beranda/subyek_tindak_pidana'); ?>" target="_blank">
+					<h4>Subyek Tindak Pidana</h4>
+				</a>
+				<p>
+					Sebagaimana diuraikan terdahulu, bahwa unsur pertama tindak pidana itu adalah perbuatan orang, pada dasarnya yang dapat melakukan tindak pidana itu manusia (naturlijke personen). Ini dapat disimpulkan berdasarkan hal-hal sebagai berikut : a. Rumusan [. . .]
 				</p>
 			</div>
 
@@ -287,56 +426,3 @@
 	</div>
 </section>
 <!-- end blog Area -->
-
-<!-- start footer Area -->
-<footer class="footer-area section-gap">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-5 col-md-6 col-sm-6">
-				<div class="single-footer-widget">
-					<h6>About Us</h6>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
-					</p>
-					<p class="footer-text">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>
-							document.write(new Date().getFullYear());
-						</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-5  col-md-6 col-sm-6">
-				<div class="single-footer-widget">
-					<h6>Newsletter</h6>
-					<p>Stay update with our latest</p>
-					<div class="" id="mc_embed_signup">
-						<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-							<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-							<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-							<div style="position: absolute; left: -5000px;">
-								<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-							</div>
-
-							<div class="info"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-				<div class="single-footer-widget">
-					<h6>Follow Us</h6>
-					<p>Let us be social</p>
-					<div class="footer-social d-flex align-items-center">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- End footer Area -->
