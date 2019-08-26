@@ -97,10 +97,8 @@
                         <div class="form-group">
                             <label class="col-sm-12">Foto</label>
                             <div class="col-sm-12">
-                                <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                                    <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Pilih File</span> <span class="fileinput-exists">Ubah</span>
-                                    <input type="file" name="Foto" value="<?= set_value('Foto'); ?>"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Hapus</a> </div>
-                                    <?php echo form_error('Foto', '<small class="text-danger pl-3">', '</small>'); ?>
+                                <input type="file" name="Foto" id="input-file-now-custom-1" class="dropify" data-default-file="<?= base_url('assets/BackEnd/img/profile/').$this->session->userdata('foto'); ?>" />
+                                <?php echo form_error('Foto', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Simpan</button>

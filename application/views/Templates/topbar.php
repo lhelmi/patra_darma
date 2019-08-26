@@ -78,8 +78,11 @@
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="<?= base_url('assets/BackEnd/') ?>#"><i class="ti-user"></i> My Profile</a></li>
-                            <li><a href="<?= base_url('assets/BackEnd/') ?>#"><i class="ti-wallet"></i> My Balance</a></li>
+                            <?php if ($this->session->userdata('role') == 'pengacara'){ ?>
+                                <li><a href="<?= site_url('administrator/Pengacara/edit/').$this->session->userdata('id') ?>"><i class="ti-user"></i> My Profile</a></li>    
+                            <?php }else{ ?>
+                                <li><a href="<?= site_url('administrator/Profile') ?>"><i class="ti-user"></i> My Profile</a></li>
+                            <?php } ?>
                             <li><a href="<?= base_url('assets/BackEnd/') ?>#"><i class="ti-email"></i> Inbox</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="<?= base_url('assets/BackEnd/') ?>#"><i class="ti-settings"></i> Account Setting</a></li>

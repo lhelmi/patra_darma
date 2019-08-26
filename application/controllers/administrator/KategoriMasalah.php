@@ -10,6 +10,9 @@ class KategoriMasalah extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model('KategoriMasalah_model');
 		is_logged_in();
+		if ($this->session->userdata('role') == 'pengacara') {
+			redirect('login/blocked');
+		}
 	}
 
 

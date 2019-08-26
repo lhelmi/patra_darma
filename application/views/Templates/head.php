@@ -18,6 +18,7 @@
     <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
     <!-- Menu CSS -->
     <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/dropify/dist/css/dropify.min.css">
     <!-- toast CSS -->
     <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- morris CSS -->
