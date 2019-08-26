@@ -43,12 +43,11 @@
 
             <li class="devider"></li>
 
-            <li><a href="<?= base_url('KategoriMasalah') ?>" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Kategori Masalah</span></a></li>
-            <li class="devider"></li>
-
+            <li><a href="<?= base_url('administrator/KategoriMasalah') ?>" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Kategori Masalah</span></a></li>
+            
             <li><a href="<?php echo base_url('administrator/hubungi_kami') ?>" class="waves-effect"><i class="mdi mdi-gmail fa-fw"></i> <span class="hide-menu">Pesan</span></a></li>
             
-            <li><a href="<?= base_url('Pengacara') ?>" class="waves-effect"><i class="mdi mdi-tie fa-fw"></i> <span class="hide-menu">Pengacara</span></a></li>
+            <li><a href="<?= base_url('administrator/Pengacara') ?>" class="waves-effect"><i class="mdi mdi-tie fa-fw"></i> <span class="hide-menu">Pengacara</span></a></li>
             <li class="devider"></li>
         </ul>
     </div>

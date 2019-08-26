@@ -33,7 +33,7 @@ class LupaPassword extends CI_Controller
             $this->db->update('pengacara');
             $this->session->set_flashdata('message', '<div class=" alert alert-success" role="alert">
                 Silahkan login menggunakan password baru!</div>');
-            redirect('login/login');
+            redirect('login');
         }
     }
 
@@ -49,7 +49,7 @@ class LupaPassword extends CI_Controller
         if (!$id['id']) {
             $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
             Email tidak ditemukan, silahkan cek kembali!</div>');
-            redirect('login/login');
+            redirect('login');
         } else {
             function generateRandomString($length = 100)
             {
@@ -95,7 +95,7 @@ class LupaPassword extends CI_Controller
             if ($this->email->send()) {
                 $this->session->set_flashdata('message', '<div class=" alert alert-success" role="alert">
                 Silahkan buka email anda untuk mengubah password!</div>');
-                redirect('login/login');
+                redirect('login');
             } else {
                 echo $this->email->print_debugger();
                 die;

@@ -58,7 +58,7 @@
 	});
 
 	$('#modaltambah').on('click', function(){
-		$('.modal-content form').attr('action', "<?= base_url('KategoriMasalah/add') ?>");
+		$('.modal-content form').attr('action', "<?= base_url('administrator/KategoriMasalah/add') ?>");
 		$('.modal-title').html('Tambah Data <?= $title; ?>');
 		$('.modal-footer button[type=submit] ').html('Simpan')
 		
@@ -67,13 +67,13 @@
 	});
 
 	$('#myTable').on('click', '#modalubah', function(){
-		$('.modal-content form').attr('action', "<?= base_url('KategoriMasalah/edit') ?>");
+		$('.modal-content form').attr('action', "<?= base_url('administrator/KategoriMasalah/edit') ?>");
 		$('.modal-title').html('Ubah Data <?= $title; ?>');
 		$('.modal-footer button[type=submit] ').html('Ubah')
 		const id = $(this).data('id');
 		
 		$.ajax({
-			url:'<?= base_url('KategoriMasalah/getubah'); ?>',
+			url:'<?= base_url('administrator/KategoriMasalah/getubah'); ?>',
 			data:{id : id},
 			method: 'post',
 			dataType:'json',
@@ -139,7 +139,7 @@
 		}, function(isConfirm){
 			if (isConfirm) {
 				$.ajax({
-					url:'<?= base_url('KategoriMasalah/delete'); ?>',
+					url:'<?= base_url('administrator/KategoriMasalah/delete'); ?>',
 					data:{id : id},
 					method: 'post',
 					dataType:'json',

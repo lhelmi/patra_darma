@@ -17,8 +17,9 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title m-b-30">Form</h3>
-                    <form class="form-material" action="<?= base_url('Pengacara/add') ?>" enctype="multipart/form-data" method="post">
+                    <form class="form-material" action="<?= base_url('administrator/Pengacara/add') ?>" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="IdPengacara" value="<?= $IdPeng ?>">
+                        <input type="hidden" name="password" value="<?= $password ?>">
                         <div class="form-group">
                             <label class="col-md-12">Nama Pengacara</label>
                             <div class="col-md-12">
@@ -51,6 +52,7 @@
                                 <?php echo form_error('NoHp', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
+                        
                         <div class="form-group" id="dynamic_field">
                             <label class="col-md-12">Bidang Keahlian</label>
                             <div class="col-md-10">
@@ -94,7 +96,7 @@
                         </div>
                         
                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-check"></i> Simpan</button>
-                        <a href="<?= base_url('Pengacara') ?>" type="button" class="btn btn-inverse waves-effect waves-light">Batal</a>
+                        <a href="<?= base_url('administrator/Pengacara') ?>" type="button" class="btn btn-inverse waves-effect waves-light">Batal</a>
                     </form>
                 </div>
             </div>

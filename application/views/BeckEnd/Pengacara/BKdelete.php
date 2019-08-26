@@ -11,7 +11,7 @@ $(function(){
 		});
 	}
 
-	$('#myTable').on('click', '#btndelete', function(){
+	$('.btndelete').on('click', function(){
 		const id = $(this).data('id');
 		swal({
 			title: 'Apakah anda yakin?',
@@ -25,7 +25,7 @@ $(function(){
 		}, function(isConfirm){
 			if (isConfirm) {
 				$.ajax({
-					url:'<?= base_url('administrator/Pengacara/delete'); ?>',
+					url:'<?= base_url('administrator/Pengacara/BKdelete'); ?>',
 					data:{id : id},
 					method: 'post',
 					dataType:'json',
