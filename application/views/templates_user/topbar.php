@@ -26,13 +26,12 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="<?php echo base_url('user/beranda') ?>">Beranda</a></li>
-                        <li><a href="about.html">Tentang</a></li>
-                        <li><a href="services.html">Layanan</a></li>
+
                         <li><a href="<?php echo base_url('user/info_hukum') ?>">Informasi Hukum</a></li>
                         <li class="menu-has-children"><a href="">Informasi Minyak</a>
 
                         </li>
-                        <li><a href="<?php echo base_url('user/konsultasi') ?>">Contact</a></li>
+                        <li><a href="<?php echo base_url('user/konsultasi') ?>">Konsultasi</a></li>
 
                     </ul>
                 </nav><!-- #nav-menu-container -->
