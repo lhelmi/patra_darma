@@ -20,6 +20,8 @@
     <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/dropify/dist/css/dropify.min.css">
     <!-- toast CSS -->
+    <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/dropzone-master/dist/dropzone.css" rel="stylesheet" type="text/css" />
+    
     <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- morris CSS -->
     <link href="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
@@ -32,6 +34,7 @@
     <link href="<?= base_url('assets/BackEnd/') ?>css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="<?= base_url('assets/BackEnd/') ?>css/colors/megna-dark.css" id="theme" rel="stylesheet">
+    
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

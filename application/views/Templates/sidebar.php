@@ -9,44 +9,30 @@
         </div>
         <ul class="nav" id="side-menu">
             <li class="user-pro">
-                <a href="<?= base_url('assets/BackEnd/') ?>#" class="waves-effect"><img src="<?= base_url('assets/BackEnd/') ?>plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
-                </a>
-                <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)"><i class="ti-user"></i> <span class="hide-menu">My Profile</span></a></li>
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)"><i class="ti-wallet"></i> <span class="hide-menu">My Balance</span></a></li>
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Inbox</span></a></li>
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Account Setting</span></a></li>
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
-                </ul>
-            </li>
-
-
-            <li><a href="<?= base_url('assets/BackEnd/') ?>inbox.html" class="waves-effect"><i class="mdi mdi-apps fa-fw"></i> <span class="hide-menu">Apps<span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>chat.html"><i class="ti-comments-smiley fa-fw"></i><span class="hide-menu">Chat-message</span></a></li>
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)" class="waves-effect"><i class="ti-desktop fa-fw"></i><span class="hide-menu">Inbox</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li> <a href="<?= base_url('assets/BackEnd/') ?>inbox.html"><i class="ti-email fa-fw"></i><span class="hide-menu">Mail box</span></a></li>
-                            <li> <a href="<?= base_url('assets/BackEnd/') ?>inbox-detail.html"><i class="ti-layout-media-left-alt fa-fw"></i><span class="hide-menu">Inbox detail</span></a></li>
-                            <li> <a href="<?= base_url('assets/BackEnd/') ?>compose.html"><i class="ti-layout-media-center-alt fa-fw"></i><span class="hide-menu">Compose mail</span></a></li>
+                        <a href="#" class="waves-effect">
+                            <img src="<?= base_url('assets/BackEnd/img/profile/').$this->session->userdata('foto'); ?>" alt="user-img" class="img-circle">
+                            <span class="hide-menu"> <?= $this->session->userdata('name'); ?><span class="fa arrow"></span></span>
+                        </a>
+                        <ul class="nav nav-second-level collapse" aria-expanded="true" style="">
+                        <li>
+                        <?php if ($this->session->userdata('role') == 'pengacara'){ ?>
+                            <a href="<?= site_url('administrator/Pengacara/edit/').$this->session->userdata('id'); ?>"><i class="ti-user">
+                            </i><span class="hide-menu">My Profile</span></a>
+                        <?php }else{ ?>
+                            <a href="<?= site_url('administrator/Profile'); ?>"><i class="ti-user">
+                            </i><span class="hide-menu">My Profile</span></a>
+                        <?php } ?>
+                        </li>
+                        <li><a href="<?= site_url('Login/logout'); ?>"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="<?= base_url('assets/BackEnd/') ?>javascript:void(0)" class="waves-effect"><i class="ti-user fa-fw"></i><span class="hide-menu">Contacts</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li> <a href="<?= base_url('assets/BackEnd/') ?>contact.html"><i class="icon-people fa-fw"></i><span class="hide-menu">Contact1</span></a></li>
-                            <li> <a href="<?= base_url('assets/BackEnd/') ?>contact2.html"><i class="icon-user-follow fa-fw"></i><span class="hide-menu">Contact2</span></a></li>
-                            <li> <a href="<?= base_url('assets/BackEnd/') ?>contact-detail.html"><i class="icon-user-following fa-fw"></i><span class="hide-menu">Contact Detail</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
 
             <li class="devider"></li>
-            <li><a href="<?php echo base_url('Dashboard') ?>" class="waves-effect"><i class="mdi mdi-gmail fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
+            <li><a href="<?php echo base_url('Dashboard') ?>" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
             <li><a href="<?php echo base_url('administrator/hubungi_kami') ?>" class="waves-effect"><i class="mdi mdi-gmail fa-fw"></i> <span class="hide-menu">Pesan</span></a></li>
+            <li><a href="<?php echo base_url('administrator/DataPenunjang') ?>" class="waves-effect"><i class="mdi mdi-file-document fa-fw"></i> <span class="hide-menu">Data Penunjang</span></a></li>
             <?php if ($this->session->userdata('role') !== 'pengacara'): ?>
                 <li><a href="<?= base_url('administrator/Pengacara') ?>" class="waves-effect"><i class="mdi mdi-tie fa-fw"></i> <span class="hide-menu">Pengacara</span></a></li>
-                <li><a href="<?= base_url('administrator/KategoriMasalah') ?>" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Kategori Masalah</span></a></li>
             <?php endif ?>
             
             <li class="devider"></li>

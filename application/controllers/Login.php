@@ -41,7 +41,7 @@ class Login extends CI_Controller
                     'role' => 'pengacara'
                 ];
                 $this->session->set_userdata($data);
-                echo "BErhasil Lpgin";
+                redirect('Dashboard');
             } else {
                 $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
                     Password salah, silahkan ulangi!</div>');
@@ -57,7 +57,7 @@ class Login extends CI_Controller
                     'role' => $admin['role'],
                 ];
                 $this->session->set_userdata($data);
-                echo "BErhasil Lpgin";
+                redirect('Dashboard');
             } else {
                 $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
                     Password salah, silahkan ulangi!</div>');

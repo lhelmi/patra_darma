@@ -32,6 +32,7 @@
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/calendar/dist/cal-init.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="<?= base_url('assets/BackEnd/') ?>js/custom.min.js"></script>
+    <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/dropzone-master/dist/dropzone.js"></script>
     <script src="<?= base_url('assets/BackEnd/') ?>js/jasny-bootstrap.js"></script>
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/dropify/dist/js/dropify.min.js">
         
@@ -154,7 +155,7 @@
 
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/sweetalert/sweetalert.min.js"></script>
     <script src="<?= base_url('assets/BackEnd/') ?>js/mask.js"></script>
-
+    
     <!--Style Switcher -->
     <script src="<?= base_url('assets/BackEnd/') ?>plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>

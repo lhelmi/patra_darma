@@ -16,10 +16,10 @@
                 <div class="white-box">
                     <div class="flash-data" data-flash = "<?= $this->session->flashdata('message') ?>"></div>
                     <div class="wow" style="margin-bottom: 10px">
-                        <button type="button" id="modaltambah" data-toggle="modal" data-target="#responsive-modal" class="btn btn-success waves-effect waves-light m-r-10">
+                        <a href="<?= base_url('administrator/DataPenunjang/add') ?>" type="button" class="btn btn-success waves-effect waves-light m-r-10">
                             <i class="fa fa-plus m-r-5"></i>
                             <span>Tambah Data</span>
-                        </button>
+                        </a>
                     </div>
                     
                     <!-- <a href="#" id="modaltambah" data-toggle="modal" data-target="#responsive-modal"><h3 class="box-title m-b-30">Tambah Data</h3></a> -->
@@ -29,25 +29,21 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Nama Kategori</th>
-                                    <th class="text-center">Jenis Perkara</th>
+                                    <th class="text-center">Nama</th>
+                                    <th class="text-center">Email</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i =1; foreach ($KategoriMasalah as $km) : ?>
+                                <?php $i =1; foreach ($hub as $km) : ?>
                                     <tr>
                                         <td class="text-center"><?= $i++ ?></td>
-                                        <td class="text-center"><?= $km['NamaKategori'] ?></td>
-                                        <td class="text-center"><?= $km['JenisPerkara'] ?></td>
+                                        <td class="text-center"><?= $km['id_hubungi'] ?></td>
+                                        <td class="text-center"><?= $km['email'] ?></td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-primary btn-circle" data-toggle="modal" id="modalubah" data-target="#responsive-modal" data-id="<?= $km['IdKategori']; ?>">
+                                            <a class="btn btn-primary btn-circle" href="<?= base_url('administrator/DataPenunjang/edit/').$km['id_hubungi'] ?>">
                                                 <i class="ti-pencil-alt"></i>
-                                            </button>
-
-                                            <button type="button" class="btn btn-warning btn-circle" data-toggle="modal" id="btndelete" data-id="<?= $km['IdKategori']; ?>">
-                                                <i class="ti-trash"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

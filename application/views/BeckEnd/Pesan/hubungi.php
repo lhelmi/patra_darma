@@ -18,30 +18,32 @@
 
                     <?php echo $this->session->flashdata('pesan') ?>
 
-                    <table class="table table-striped table-advance table-hover">
+                     <table id="myTable" class="table table-striped table color-bordered-table danger-bordered-table">
+                        <thead>
                         <tr>
                             <th>NO</th>
                             <th><i class="fa fa-bookmark"> NAMA</th>
                             <th><i class="fa fa-bullhorn"></i> EMAIL</th>
-                            <th><i class="fa fa-question-circle"></i> PESAN</th>
-                            <th colspan="2"><i class=" fa fa-edit"></i> AKSI</th>
+                            <th><i class=" fa fa-edit"></i> AKSI</th>
                         </tr>
-
+                        </thead>
+                        <tbody>
                         <?php $no = 1;
                         foreach ($hubungi as $hub) : ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $hub->nama ?></td>
                             <td><?php echo $hub->email ?></td>
-                            <td><?php echo $hub->pesan ?></td>
-                            <td width="20px">
+                            <td>
                                 <?php echo anchor('administrator/hubungi_kami/kirim_email/' . $hub->id_hubungi, '<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>') ?>
-                            </td>
-                            <td width="20px">
+                            
+                            
                                 <?php echo anchor('admin/pesan/delete/' . $hub->id_hubungi, '<div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>') ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
+                        </tbody>
+                        
                     </table>
                 </div>
             </div>

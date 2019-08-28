@@ -25,6 +25,12 @@ class Pengacara_model extends CI_Model
     	return $this->db->get('pengacara')->result_array();
 	}
 
+	function get_limit_data() {
+		$this->db->where('baca', '0');
+		$this->db->limit(5, 0);
+		return $this->db->get('hubungi')->result_array();
+	}
+
 	function insert($data)
 	{	
 		$this->db->insert('pengacara', $data);
