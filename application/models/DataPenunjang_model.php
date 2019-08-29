@@ -5,24 +5,24 @@ class DataPenunjang_model extends CI_Model
 {
 	function get_all()
 	{	
-    	$this->db->join('hubungi', 'datapenunjang.id_hubungi=hubungi.id_hubungi');
+    	$this->db->join('klien', 'datapenunjang.IdKlien=klien.IdKlien');
     	return $this->db->get('datapenunjang')->result_array();
 	}
 
 	function get_hub()
 	{	
-    	return $this->db->get('hubungi')->result_array();
+    	return $this->db->get('klien')->result_array();
 	}
 
 	function get_hub_by_id($id)
 	{	
-		$this->db->where('id_hubungi', $id);
-    	return $this->db->get('hubungi')->row_array();
+		$this->db->where('IdKlien', $id);
+    	return $this->db->get('klien')->row_array();
 	}
 
 	function get_by_id($id)
 	{	
-		$this->db->where('id_hubungi', $id);
+		$this->db->where('IdKlien', $id);
     	return $this->db->get('datapenunjang')->result_array();
 	}
 
@@ -30,11 +30,6 @@ class DataPenunjang_model extends CI_Model
 	{	
 		$this->db->insert_batch('datapenunjang', $data);
 	}
-
-	function update($data, $idbk)
-    {
-        $this->db->update_batch('datapenunjang', $data, $idbk);
-    }
 
 	function delete($id)
     {

@@ -2,13 +2,13 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Data <?= $title ?></h4> </div>
+                <h4 class="page-title">Form Data <?= $title ?></h4> </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 
                 <ol class="breadcrumb">
                     <li><a href="<?= base_url('assets/BackEnd/') ?>#">Dashboard</a></li>
-                    <li>Pegawai</li>
-                    <li class="active"><?= $title ?></li>
+                    <li>Data Penunjang</li>
+                    <li class="active">Tambah Data <?= $title ?></li>
 
                 </ol>
             </div>
@@ -22,13 +22,13 @@
                         <div class="form-group">
                             <label class="col-md-12">Nama Klien</label>
                             <div class="col-md-12">
-                                <select name="id_hubungi" value="<?= set_value('id_hubungi'); ?>" class="form-control select2">
+                                <select name="IdKlien" value="<?= set_value('IdKlien'); ?>" class="form-control select2">
                                     <option value="">--Pilih Nama Klien--</option>
                                     <?php foreach ($hub as $keyx) { ?>
-                                        <option value="<?= $keyx['id_hubungi']; ?>"><?= $keyx['nama'] ?> - <?= $keyx['email'] ?></option>
+                                        <option value="<?= $keyx['IdKlien']; ?>"><?= $keyx['NamaKlien'] ?> - <?= $keyx['EmailKlien'] ?></option>
                                     <?php } ?>
                                 </select>
-                                <?php echo form_error('id_hubungi', '<small class="text-danger pl-3">', '</small>'); ?>
+                                <?php echo form_error('IdKlien', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
                         
@@ -42,8 +42,12 @@
                         </div>
                         
                         
-                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-check"></i> Simpan</button>
-                        <a href="<?= base_url('administrator/Pengacara') ?>" type="button" class="btn btn-inverse waves-effect waves-light">Batal</a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fa fa-check"></i> Simpan</button>
+                        <a style="color: white" href="<?= base_url('administrator/DataPenunjang') ?>" type="button" class="btn btn-inverse waves-effect waves-light m-r-10">
+                            <i class="fa fa-times m-r-5"></i>
+                            <span>Batal</span>
+                        </a>
                     </form>
                 </div>
             </div>

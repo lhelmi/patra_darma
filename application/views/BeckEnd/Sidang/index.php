@@ -16,7 +16,7 @@
                 <div class="white-box">
                     <div class="flash-data" data-flash = "<?= $this->session->flashdata('message') ?>"></div>
                     <div class="wow" style="margin-bottom: 10px">
-                        <a href="<?= base_url('administrator/DataPenunjang/add') ?>" type="button" class="btn btn-success waves-effect waves-light m-r-10">
+                        <a href="<?= base_url('administrator/Sidang/add') ?>" type="button" class="btn btn-success waves-effect waves-light m-r-10">
                             <i class="fa fa-plus m-r-5"></i>
                             <span>Tambah Data</span>
                         </a>
@@ -29,21 +29,32 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
-                                    <th class="text-center">Nama</th>
-                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Nama Klien</th>
+                                    <th class="text-center">Jenis Perkara</th>
+                                    <th class="text-center">Lawan</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i =1; foreach ($hub as $km) : ?>
+                                <?php $i =1; foreach ($Sidang as $km) : ?>
                                     <tr>
                                         <td class="text-center"><?= $i++ ?></td>
-                                        <td class="text-center"><?= $km['IdKlien'] ?></td>
-                                        <td class="text-center"><?= $km['EmailKlien'] ?></td>
+                                        <td class="text-center"><?= $km['NamaKlien'] ?></td>
+                                        <td class="text-center"><?= $km['JenisPerkara'] ?></td>
+                                        <td class="text-center"><?= $km['Lawan'] ?></td>
                                         <td class="text-center">
-                                            <a class="btn btn-primary btn-circle" href="<?= base_url('administrator/DataPenunjang/edit/').$km['IdKlien'] ?>">
+                                        	<a class="btn btn-success btn-circle" href="<?= base_url('administrator/Sidang/detail/').$km['IdSidang'] ?>">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+
+                                            <a class="btn btn-primary btn-circle" href="<?= base_url('administrator/Sidang/edit/').$km['IdKlien'] ?>">
                                                 <i class="ti-pencil-alt"></i>
                                             </a>
+
+                                            <button type="button" class="btn btn-warning btn-circle" data-toggle="modal" id="btndelete" data-id="<?= $km['IdSidang']; ?>">
+                                                <i class="ti-trash"></i>
+                                            </button>
+                                            
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

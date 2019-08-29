@@ -37,7 +37,7 @@ class DataPenunjang extends CI_Controller {
 			$this->load->view('Templates/footer', $data);
 		}else{
 			$config['upload_path'] = './assets/BackEnd/file/';
-			$config['allowed_types'] = 'gif|jpg|png';
+			$config['allowed_types'] = 'gif|jpg|png|txt|doc|docx|pdf';
 			$config['max_size']     = '2048';
 
 			$this->load->library('upload');
@@ -56,7 +56,7 @@ class DataPenunjang extends CI_Controller {
                 $this->upload->do_upload();
                 $fileData = $this->upload->data();
                 $datainsert[$i]['File'] = $fileData['file_name'];
-                $datainsert[$i]['id_hubungi'] = $this->input->post('id_hubungi',TRUE);
+                $datainsert[$i]['IdKlien'] = $this->input->post('IdKlien',TRUE);
 			}
 			$this->DataPenunjang_model->insert($datainsert);
 			$this->session->set_flashdata('message', 'Berhasil ditambah!');
@@ -80,7 +80,7 @@ class DataPenunjang extends CI_Controller {
 			$this->load->view('BeckEnd/DataPenunjang/DPDelete', $data);
 		}else{
 			$config['upload_path'] = './assets/BackEnd/file/';
-			$config['allowed_types'] = 'gif|jpg|png';
+			$config['allowed_types'] = 'gif|jpg|png|txt|doc|docx|pdf';
 			$config['max_size']     = '2048';
 
 			$this->load->library('upload');
@@ -99,7 +99,7 @@ class DataPenunjang extends CI_Controller {
                 $this->upload->do_upload();
                 $fileData = $this->upload->data();
                 $datainsert[$i]['File'] = $fileData['file_name'];
-                $datainsert[$i]['id_hubungi'] = $this->input->post('id_hubungi',TRUE);
+                $datainsert[$i]['IdKlien'] = $this->input->post('IdKlien',TRUE);
 			}
 			
 			$this->DataPenunjang_model->insert($datainsert);
@@ -118,7 +118,7 @@ class DataPenunjang extends CI_Controller {
 
 	public function _rules() 
     {
-		$this->form_validation->set_rules('id_hubungi', 'NamaKategori', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
+		$this->form_validation->set_rules('IdKlien', 'IdKlien', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
     	
     	$this->form_validation->set_error_delimiters('<small class="text-danger">', '</small>');
     }

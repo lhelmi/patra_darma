@@ -60,7 +60,7 @@
                                     <?php }else{ ?>
                                         <a href="<?= site_url('Dashboard/updatebacanotif/') .$key['admin_notif_id'].'/'.$key['id_hubungi'] ?>">
                                     <?php } ?>
-                                        <div class="user-img"> <img src="<?= base_url('assets/BackEnd/') ?>plugins/images/users/pawandeep.jpg" alt="user" class="img-circle"> </div>
+                                        <div class="user-img"> <img src="<?= base_url('assets/BackEnd/') ?>plugins/images/email.png" alt="user" class="img-circle"> </div>
                                         <div class="mail-contnet">
                                             <h5><?= $key['nama']; ?></h5> <span class="mail-desc"><?= $key['pesan'] ?></span> <span class="time"><?= $key['waktu'] ?></span> </div>
                                     </a>

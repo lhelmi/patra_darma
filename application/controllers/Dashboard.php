@@ -6,19 +6,19 @@ class Dashboard extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Pengacara_model');
+		$this->load->model('Sidang_model');
 		is_logged_in();
 	}
 
 	public function index()
 	{
 		$data['title'] = 'Dashboard';
-		
+		$data['Sidang'] = $this->Sidang_model->dashboard();
 		
 		$this->load->view('Templates/head', $data);
 		$this->load->view('Templates/topbar', $data);
 		$this->load->view('Templates/sidebar', $data);
-		
+		$this->load->view('BeckEnd/dashboard', $data);
 		$this->load->view('Templates/footer', $data);
 	}
 
