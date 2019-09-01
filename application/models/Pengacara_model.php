@@ -16,7 +16,7 @@ class Pengacara_model extends CI_Model
 			$kode = 1;    
 		}
 		$kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
-		$kodejadi = "Kdp-".$kodemax;
+		$kodejadi = "KdP-".$kodemax;
 		return $kodejadi;  
     }
 

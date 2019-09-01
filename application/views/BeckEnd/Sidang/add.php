@@ -94,15 +94,6 @@
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Jenis Perkara</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="JenisPerkara">
-                                                    <?php echo form_error('JenisPerkara', '<small class="text-danger pl-3">', '</small>'); ?>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3">Lawan</label>
-                                                <div class="col-md-9">
                                                     <select class="form-control" name="JenisPerkara">
                                                         <option value="">--Pilih Jenis Perkara--</option>
                                                         <option value="Keluarga">Keluarga</option>
@@ -112,6 +103,15 @@
                                                         <option value="Pertanahan dan Property">Pertanahan dan Property</option>
                                                         <option value="Lainnya">Lainnya</option>
                                                     </select>
+                                                    <?php echo form_error('JenisPerkara', '<small class="text-danger pl-3">', '</small>'); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Lawan</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="Lawan">
                                                     <?php echo form_error('Lawan', '<small class="text-danger pl-3">', '</small>'); ?>
                                                 </div>
                                             </div>

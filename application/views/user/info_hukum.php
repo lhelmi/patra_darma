@@ -34,21 +34,29 @@
 					<form method="post" action="<?php echo base_url('user/info_hukum/kirim_pesan') ?>" class="form-wrap">
 						<?php echo $this->session->flashdata('pesan') ?>
 						<h4 class="text-white pb-20">Request a Quote</h4>
+						<?php echo form_error('kategori', '<small class="text-danger pl-3">', '</small><br>'); ?>
+						<?php echo form_error('nama', '<small class="text-danger pl-3">', '</small><br>'); ?>
+						<?php echo form_error('email', '<small class="text-danger pl-3">', '</small><br>'); ?>
+						<?php echo form_error('pesan', '<small class="text-danger pl-3">', '</small><br>'); ?>
 						<div class="form-select" id="service-select">
-							<select>
-								<option value=" 1">Pilih Kategori Masalah</option>
-								<option value="2">Keluarga</option>
-								<option value="3">Bisnis</option>
-								<option value="4">Hutang piutang</option>
-								<option value="5">Pidana dan Laporan Polisi</option>
-								<option value="5">Pertanahan dan Property</option>
-								<option value="5">Lainya</option>
+							<select name="kategori">
+								<option value="">Pilih Kategori Masalah</option>
+								<option value="Keluarga">Keluarga</option>
+								<option value="Bisnis">Bisnis</option>
+								<option value="Hutang piutang">Hutang Piutang</option>
+								<option value="Pidana dan Laporan Polisi">Pidana dan Laporan Polisi</option>
+								<option value="Pertanahan dan Property">Pertanahan dan Property</option>
+								<option value="Lainnya">Lainnya</option>
 							</select>
+							
 						</div>
 						<input type="text" name="nama" class="form-control" placeholder="name">
-						<input type="phone" class="form-control" placeholder="Phone Number">
+						
+						<!-- <input type="phone" class="form-control" placeholder="Phone Number"> -->
 						<input type="text" name="email" class="form-control" placeholder="Email Address">
+						
 						<textarea type="text" name="pesan" id="" cols="30" rows="5" placeholder="Message" class="form-control"></textarea>
+						
 						<button type="submit" class="primary-btn">Kirim Pesan</button>
 					</form>
 				</div>

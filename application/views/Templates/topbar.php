@@ -93,13 +93,17 @@
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
+                            </li>    
                             <?php if ($this->session->userdata('role') == 'pengacara'){ ?>
                                 <li><a href="<?= site_url('administrator/Pengacara/edit/').$this->session->userdata('id') ?>"><i class="ti-user"></i> My Profile</a></li>    
                             <?php }else{ ?>
                                 <li><a href="<?= site_url('administrator/Profile') ?>"><i class="ti-user"></i> My Profile</a></li>
                             <?php } ?>
                             <li><a href="<?= site_url('administrator/hubungi_kami') ?>"><i class="ti-email"></i> Inbox</a></li>
+                            
                             <li role="separator" class="divider"></li>
+                            <li><a href="<?= site_url('user/beranda');?>"><i class="mdi mdi-home-outline"></i> Beranda</a>
+
                             <li><a href="<?= site_url('Login/logout') ?>"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                         <!-- /.dropdown-user -->

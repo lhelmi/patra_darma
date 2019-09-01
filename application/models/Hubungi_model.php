@@ -22,9 +22,12 @@ class Hubungi_model extends CI_Model
         return $kodejadi;  
     }
 
-    public function tampil_data($table)
+    public function tampil_data()
     {
-        return $this->db->get($table);
+        $this->db->join('hubungi', 'admin_notif.id_hubungi = hubungi.id_hubungi');
+        $this->db->where('id', $this->session->userdata('id'));
+        $this->db->order_by('waktu', 'DESC');
+        return $this->db->get('admin_notif')->result_array();
     }
 
     public function insert_data($data, $table)
@@ -45,5 +48,11 @@ class Hubungi_model extends CI_Model
     public function kirim_data($where, $table)
     {
         return $this->db->get_where($table, $where);
+    }
+
+    function delete($id)
+    {
+        $this->db->where('id_hubungi', $id);
+        $this->db->delete('hubungi');
     }
 }

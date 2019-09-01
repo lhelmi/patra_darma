@@ -75,8 +75,8 @@ class LupaPassword extends CI_Controller
                 'charset' => 'utf8',
                 'protocol' => 'smtp',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'alirafmc@gmail.com',
-                'smtp_pass' => 'akunpalsu11',
+                'smtp_user' => 'patradarmawja@gmail.com',
+                'smtp_pass' => 'Admin111',
                 'smtp_port' => 465,
                 'crlf' => "\r\n",
                 'newline' => "\r\n"
@@ -84,7 +84,7 @@ class LupaPassword extends CI_Controller
 
             $this->load->library('email', $config);
             $this->email->initialize($config);
-            $this->email->from("alirafmc@gmail.com", 'noobmaster');
+            $this->email->from("patradarmawja@gmail.com", 'patradarmawja');
 
             $this->email->to($to_email);
 

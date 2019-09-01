@@ -21,7 +21,7 @@
         <div class="container main-menu">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo">
-                    <a href="index.html"><img src="<?= base_url('assets2/'); ?>img/logo2.png" alt="" title="" /></a>
+                    <a href="<?= site_url('user/beranda'); ?>"><img src="<?= site_url('assets2/'); ?>img/logo2.png" alt="" title="" /></a>
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
@@ -32,6 +32,13 @@
 
                         </li>
                         <li><a href="<?php echo base_url('user/konsultasi') ?>">Konsultasi</a></li>
+                        <?php
+                            if (!empty($this->session->userdata('id'))) {
+                        ?>
+                            <li><a href="<?php echo base_url('Dashboard') ?>">Dashboard</a></li>
+                        <?php }else{ ?>
+                            <li><a href="<?php echo base_url('login') ?>">Login</a></li>
+                        <?php } ?>
 
                     </ul>
                 </nav><!-- #nav-menu-container -->

@@ -84,11 +84,13 @@
                         </div>
                     </div>
                     <div class="form-group text-center m-t-20">
-                        <div class="col-xs-12">
-                            <button class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Log In</button>
+                        <div class="col-xs-6">
+                            <a class="btn btn-info btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="button" href="<?= site_url('user/beranda'); ?>">Beranda</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <button class="btn btn-success btn-lg btn-block btn-rounded text-uppercase waves-effect waves-light" type="submit">Log In</button>
                         </div>
                     </div>
-
                 </form>
                 <form class="form-horizontal" id="recoverform" method="post" action="<?= base_url('lupapassword/kirim_link'); ?>">
                     <div class="form-group ">

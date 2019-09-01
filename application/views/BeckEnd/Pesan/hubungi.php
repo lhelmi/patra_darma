@@ -2,13 +2,13 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-
+                <h4 class="page-title">Data <?= $title ?></h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 
                 <ol class="breadcrumb">
                     <li><a href="<?= base_url('assets/BackEnd/') ?>#">Dashboard</a></li>
-
+                    <li class="active"><?= $title ?></li>
                 </ol>
             </div>
         </div>
@@ -32,13 +32,22 @@
                         foreach ($hubungi as $hub) : ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
-                            <td><?php echo $hub->nama ?></td>
-                            <td><?php echo $hub->email ?></td>
+                            <td><?php echo $hub['nama'] ?></td>
+                            <td><?php echo $hub['email'] ?></td>
                             <td>
-                                <?php echo anchor('administrator/hubungi_kami/kirim_email/' . $hub->id_hubungi, '<div class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></div>') ?>
+                                <?php if ($this->session->userdata('role') == 'pengacara') { ?>
+                                    <a class="btn btn-success btn-circle" href="<?= base_url('administrator/Sidang/detail/').$hub['IdSidang'] ?>">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                <?php }else{ ?>
+                                    <a class="btn btn-success btn-circle" href="<?= site_url('Dashboard/updatebacanotif/') .$hub['admin_notif_id'].'/'.$hub['id_hubungi']; ?>">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                <?php } ?>
                             
-                            
-                                <?php echo anchor('admin/pesan/delete/' . $hub->id_hubungi, '<div class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></div>') ?>
+                                <button type="button" class="btn btn-warning btn-circle" id="btndelete" data-id="<?= $hub['id_hubungi']; ?>">
+                                    <i class="ti-trash"></i>
+                                </button>
                             </td>
                         </tr>
                         <?php endforeach; ?>
