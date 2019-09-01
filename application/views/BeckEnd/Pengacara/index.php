@@ -45,9 +45,9 @@
                                         <td class="text-center"><?= $km['Jk'] ?></td>
                                         <td class="text-center"><?= $km['Foto'] ?></td>
                                         <td class="text-center">
-                                            <a class="btn btn-primary btn-circle" href="<?= base_url('administrator/Pengacara/edit/').$km['IdPengacara'] ?>">
+                                            <!-- <a class="btn btn-primary btn-circle" href="<?= base_url('administrator/Pengacara/edit/').$km['IdPengacara'] ?>">
                                                 <i class="ti-pencil-alt"></i>
-                                            </a>
+                                            </a> -->
 
                                             <button type="button" class="btn btn-warning btn-circle" data-toggle="modal" id="btndelete" data-id="<?= $km['IdPengacara']; ?>">
                                                 <i class="ti-trash"></i>

@@ -33,6 +33,7 @@ class Konsultasi extends CI_Controller
                 'nama' => $nama,
                 'email' => $email,
                 'pesan' => $pesan,
+                'kategori' => 'Lainnya'
             );
             
             foreach ($q_admin as $key => $value) {

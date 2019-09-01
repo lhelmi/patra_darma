@@ -32,9 +32,9 @@
   <div class="error-box">
     <div class="error-body text-center">
       <h1 class="text-info">403</h1>
-      <h3 class="text-uppercase">Forbidden Error</h3>
-      <p class="text-muted m-t-30 m-b-30 text-uppercase">You don't have permission to access on this server.</p>
-      <a href="index.html" class="btn btn-info btn-rounded waves-effect waves-light m-b-40">Back to home</a> </div>
+      <h3 class="text-uppercase">Akses Ditolak</h3>
+      <p class="text-muted m-t-30 m-b-30 text-uppercase">Anda tidak memiliki akses ke halaman ini.</p>
+      <a href="<?= site_url('Dashboard'); ?>" class="btn btn-info btn-rounded waves-effect waves-light m-b-40">Kembali ke Dashboard</a> </div>
     <footer class="footer text-center">2017 © Ample Admin.</footer>
   </div>
 </section>

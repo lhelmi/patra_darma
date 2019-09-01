@@ -16,14 +16,16 @@
                         <ul class="nav nav-second-level collapse" aria-expanded="true" style="">
                         <li>
                         <?php if ($this->session->userdata('role') == 'pengacara'){ ?>
-                            <a href="<?= site_url('administrator/Pengacara/edit/').$this->session->userdata('id'); ?>"><i class="ti-user">
+                            <a href="<?= site_url('administrator/Pengacara/edit/').$this->session->userdata('id'); ?>"><i class="ti-user fa-fw">
                             </i><span class="hide-menu">My Profile</span></a>
                         <?php }else{ ?>
-                            <a href="<?= site_url('administrator/Profile'); ?>"><i class="ti-user">
+                            <a href="<?= site_url('administrator/Profile'); ?>"><i class="ti-user fa-fw">
                             </i><span class="hide-menu">My Profile</span></a>
                         <?php } ?>
                         </li>
-                        <li><a href="<?= site_url('Login/logout'); ?>"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
+                        <li><a href="<?= site_url('user/beranda'); ?>"><i class="mdi mdi-home-outline fa-fw"></i> <span class="hide-menu">Beranda</span></a></li>
+
+                        <li><a href="<?= site_url('Login/logout'); ?>"><i class="fa fa-power-off fa-fw"></i> <span class="hide-menu">Logout</span></a></li>
                         </ul>
                     </li>
 

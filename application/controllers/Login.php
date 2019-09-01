@@ -75,7 +75,7 @@ class Login extends CI_Controller
         $this->session->unset_userdata('id');
         $this->session->unset_userdata('email');
         $this->session->set_flashdata('message', '<div class=" alert alert-success" role="alert">
-		You have been logged out</div>');
+		Anda Berhasil Logout</div>');
         redirect('login');
     }
 
