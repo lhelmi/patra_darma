@@ -18,7 +18,7 @@
                 <div class="white-box">
                     <h3 class="box-title m-b-30">Form</h3>
                     <form class="form-material" action="<?= base_url('administrator/Pengacara/add') ?>" enctype="multipart/form-data" method="post">
-                        <input type="text" name="IdPengacara" value="<?= $IdPeng ?>">
+                        <input type="hidden" name="IdPengacara" value="<?= $IdPeng ?>">
                         <input type="hidden" name="password" value="<?= $password ?>">
                         <div class="form-group">
                             <label class="col-md-12">Nama Pengacara</label>

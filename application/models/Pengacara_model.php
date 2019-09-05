@@ -17,7 +17,22 @@ class Pengacara_model extends CI_Model
 		}
 		$kodemax = str_pad($kode, 4, "0", STR_PAD_LEFT);
 		$kodejadi = "KdP-".$kodemax;
-		return $kodejadi;  
+		return $kodejadi;
+    }
+
+    function get_number()
+	{
+	    $this->db->select('RIGHT(pengacara.IdPengacara,4) as kode', FALSE);
+	    $this->db->order_by('IdPengacara','DESC');    
+	    $this->db->limit(1);
+		$query = $this->db->get('pengacara');
+		if($query->num_rows() <> 0){      
+			$data = $query->row();      
+			$kode = intval($data->kode) + 1;    
+		}else {      
+			$kode = 1;    
+		}
+		return $kode;
     }
 
 	function get_all()

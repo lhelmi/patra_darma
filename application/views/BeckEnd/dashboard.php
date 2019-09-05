@@ -44,7 +44,7 @@
                                                         <td class="text-center"><?= $km['JenisPerkara'] ?></td>
                                                         <td class="text-center"><?= $km['tempat'] ?></td>
                                                         <td class="text-center"><?= $km['NamaPengacara'] ?></td>
-                                                        <td class="text-center"><?= $km['keterangan'] ?></td>
+                                                        <td class="text-center"><?= $km['detailket'] ?></td>
                                                     </tr>
                                                 <?php endforeach; ?>
                                             </tbody>        

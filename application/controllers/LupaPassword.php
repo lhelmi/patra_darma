@@ -9,11 +9,54 @@ class LupaPassword extends CI_Controller
         $this->load->library('form_validation');
     }
 
-    public function lupapass($id = "100")
+    public function lupapass($id)
     {
-        $url['id'] = $this->db->query("select IdPengacara from pengacara where IdPengacaraHash='" . $id . "'")->row_array();
-        $id2['id'] = $url['id']['IdPengacara'];
-        $this->load->view('login/ubahpassword', $id2);
+        $url = $this->db->query("select IdPengacara from pengacara where IdPengacaraHash='" . $id . "'")->row_array();
+        $urladmin = $this->db->query("select id from admin where tokenHash='" . $id . "'")->row_array();
+        if ($url) {
+            $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+            'matches' => 'Pengulangan password tidak sama!',
+            'min_length' => 'Minimal password terdiri dari 6 karakter!',
+            'required' => 'Password tidak boleh kosong'
+            ]);
+            $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+
+            if ($this->form_validation->run() == false) {
+                $id2['hash'] = $id;
+                $id2['id'] = $url['IdPengacara'];
+                $id2['is'] = '0';
+                $this->load->view('login/ubahpassword', $id2);
+            }else{
+                $this->db->set('Password', password_hash($_POST['password1'], PASSWORD_DEFAULT));
+                $this->db->where('IdPengacara', $_POST['id']);
+                $this->db->update('pengacara');
+                $this->session->set_flashdata('message', '<div class=" alert alert-success" role="alert">
+                    Silahkan login menggunakan password baru!</div>');
+                redirect('login');
+            }
+        }elseif ($urladmin) {
+            $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
+            'matches' => 'Pengulangan password tidak sama!',
+            'min_length' => 'Minimal password terdiri dari 6 karakter!',
+            'required' => 'Password tidak boleh kosong'
+            ]);
+            $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
+
+            if ($this->form_validation->run() == false) {
+                $id2['hash'] = $id;
+                $id2['id'] = $urladmin['id'];
+                $id2['is'] = '1';
+                $this->load->view('login/ubahpassword', $id2);
+            }else{
+                 $this->db->set('Password', password_hash($_POST['password1'], PASSWORD_DEFAULT));
+                $this->db->where('id', $_POST['id']);
+                $this->db->update('admin');
+                $this->session->set_flashdata('message', '<div class=" alert alert-success" role="alert">
+                    Silahkan login menggunakan password baru!</div>');
+                redirect('login');
+            }   
+        }
+        
     }
 
     public function ubah()
@@ -45,12 +88,15 @@ class LupaPassword extends CI_Controller
         // ]);
 
         $to_email = $this->input->post('email');
-        $id['id'] = $this->db->query("select * from pengacara where Email='" . $to_email . "'")->row_array();
-        if (!$id['id']) {
+        $sql = $this->db->query("select * from pengacara where Email='" . $to_email . "'")->row_array();
+        $sqladmin = $this->db->query("select * from admin where Email='" . $to_email . "'")->row_array();
+        $namap = $sql['NamaPengacara'];
+        $namaadmin = $sqladmin['Nama'];
+        if (!$sql and !$sqladmin) {
             $this->session->set_flashdata('message', '<div class=" alert alert-danger" role="alert">
             Email tidak ditemukan, silahkan cek kembali!</div>');
             redirect('login');
-        } else {
+        }else{
             function generateRandomString($length = 100)
             {
                 return substr(str_shuffle(str_repeat($x = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length / strlen($x)))), 1, $length);
@@ -58,13 +104,20 @@ class LupaPassword extends CI_Controller
 
             $token = generateRandomString();
 
-            $this->db->set('IdPengacaraHash', $token);
-            $this->db->where('Email', $to_email);
-            $this->db->update('pengacara');
-
+            if ($sql) {
+                $namaemail = $namap;
+                $this->db->set('IdPengacaraHash', $token);
+                $this->db->where('Email', $to_email);
+                $this->db->update('pengacara');
+            }elseif ($sqladmin) {
+                $namaemail = $namaadmin;
+                $this->db->set('tokenHash', $token);
+                $this->db->where('Email', $to_email);
+                $this->db->update('admin');
+            }
             $subject = "Layanan Lupa Password Patra Darma";
             $message = "
-            Hi Aditya Pangestu!<br>
+            Hi ". $namaemail ."!<br>
             Klik tombol dibawah ini untuk mengubah Password anda<br>"
                 . "<a href='" . base_url('lupapassword/lupapass/') . $token  . "'><button type='button' class='btn btn-primary btn-lg btn-block'>Ubah Password</button>" . "</a>";
 

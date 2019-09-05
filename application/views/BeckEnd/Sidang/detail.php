@@ -14,10 +14,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-info">
-                    <div class="panel-heading"> With Horizontal two column</div>
+                    <div class="panel-heading"> Data Detail</div>
                     <div class="panel-wrapper collapse in" aria-expanded="true">
                         <div class="panel-body">
                             <div class="form-horizontal">
+                                <?= $this->session->flashdata('pesan'); ?>
                                 <div class="form-body">
                                     <h3 class="box-title">Data Diri</h3>
                                     <hr class="m-t-0 m-b-40">
@@ -112,6 +113,11 @@
                         <button type="button" id="modaltambah" data-toggle="modal" data-target="#responsive-modal" class="btn btn-success waves-effect waves-light m-r-10">
                             <i class="fa fa-plus m-r-5"></i>
                             <span>Tambah Sidang</span>
+                        </button>
+
+                        <button type="button" id="modalexcel" data-toggle="modal" data-target="#excel-modal" class="btn btn-success waves-effect waves-light m-r-10">
+                            <i class="fa fa-file-excel-o m-r-5"></i>
+                            <span>Import Data Excel</span>
                         </button>
                     </div>
                     

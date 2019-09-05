@@ -31,6 +31,9 @@
 
             <li class="devider"></li>
             <li><a href="<?php echo base_url('Dashboard') ?>" class="waves-effect"><i class="mdi mdi-av-timer fa-fw"></i> <span class="hide-menu">Dashboard</span></a></li>
+            <?php if ($this->session->userdata('role') == '1'): ?>
+                <li><a href="<?= base_url('administrator/Admin') ?>" class="waves-effect"><i class="mdi mdi-tie fa-fw"></i> <span class="hide-menu">Admin</span></a></li>
+            <?php endif ?>
             <li><a href="<?php echo base_url('administrator/hubungi_kami') ?>" class="waves-effect"><i class="mdi mdi-gmail fa-fw"></i> <span class="hide-menu">Pesan</span></a></li>
             <li><a href="<?php echo base_url('administrator/Sidang') ?>" class="waves-effect"><i class="mdi mdi-gavel fa-fw"></i> <span class="hide-menu">Sidang</span></a></li>
             <li><a href="<?php echo base_url('administrator/DataPenunjang') ?>" class="waves-effect"><i class="mdi mdi-file-document fa-fw"></i> <span class="hide-menu">Data Penunjang</span></a></li>

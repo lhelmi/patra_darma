@@ -7,6 +7,9 @@ class Sidang extends CI_Controller {
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->model('Sidang_model');
+		$this->load->model('Pengacara_model');
+		$this->load->library('PHPExcel');
+        $this->load->library('PHPExcel/IOFactory');
 		is_logged_in();
 	}
 
@@ -106,7 +109,7 @@ class Sidang extends CI_Controller {
 		$data['title'] = 'Tambah Sidang';
 		
 		$this->_rules();
-		$this->form_validation->set_rules('EmailKlien', 'EmailKlien', 'trim|required|valid_email|is_unique[klien.EmailKlien]|min_length[12]|max_length[30]',
+		$this->form_validation->set_rules('EmailKlien', 'EmailKlien', 'trim|required|valid_email|is_unique[klien.EmailKlien]|is_unique[pengacara.email]|is_unique[admin.Email]|min_length[12]|max_length[30]',
     		[
 	    		'required' => '*Field Tidak Boleh Kosong',
 	    		'is_unique' => 'Email Sudah digunakan',
@@ -153,7 +156,7 @@ class Sidang extends CI_Controller {
 
 		$this->_rules();
 		if ($this->input->post('EmailKlien',TRUE) <> $row->EmailKlien) {
-				$this->form_validation->set_rules('EmailKlien', 'EmailKlien', 'trim|required|valid_email|is_unique[klien.EmailKlien]|min_length[12]|max_length[30]',
+				$this->form_validation->set_rules('EmailKlien', 'EmailKlien', 'trim|required|valid_email|is_unique[klien.EmailKlien]|is_unique[pengacara.email]|is_unique[admin.Email]|min_length[12]|max_length[30]',
 		    		[
 			    		'required' => '*Field Tidak Boleh Kosong',
 			    		'is_unique' => 'Email Sudah digunakan',
@@ -230,4 +233,59 @@ class Sidang extends CI_Controller {
     	$this->form_validation->set_rules('Lawan', 'Lawan', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
     	$this->form_validation->set_error_delimiters('<small class="text-danger">', '</small>');
     }
+
+    public function excel() 
+    {
+    	$date = date('Ymd');
+    	$idS = $this->input->post('IdSidang',TRUE);
+    	$config['upload_path'] = './assets/BackEnd/file/excel/';
+        $config['allowed_types'] = 'xlsx';
+        $config['max_size']  = '5048';
+        $config['overwrite'] = true;
+        
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('inexcel');
+        if ($this->upload->do_upload('inexcel')) {
+        	$namefile = $this->upload->data('file_name');
+        	$objReader  = new PHPExcel_Reader_Excel2007();
+            $objPHPExcel = $objReader->load('assets/BackEnd/file/excel/' .$namefile);
+            $sheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true ,true);
+
+            $data = array();
+            $numrow = 1;
+            // $idpeng = $this->Pengacara_model->get_number();
+            foreach($sheet as $row){
+            	// $ho = $idpeng++;
+				if($numrow > 1){
+					$notif = $this->db->get_where('Pengacara', ['NamaPengacara' => $row['D']])->row_array();
+					if (!$notif) {
+						echo "string";
+						$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>Gagal import data karena ada data pengacara yang tidak terdaftar dalam sistem.</div>');
+						redirect('administrator/Sidang/detail/'.$idS);
+						die();
+					}else{
+						$date = str_replace('/', '-', $row['B'] );
+						$newDate = date("Y-m-d", strtotime($date));
+						array_push($data, array(
+						  'keterangan'=>$row['A'],
+						  'tanggal'=> $newDate,
+						  'tempat'=>$row['C'],
+						  'IdSidang'=>$this->input->post('IdSidang',TRUE),
+						  'IdPengacara'=> $notif['IdPengacara'],
+						));
+					}
+				}
+		    	$numrow++;
+		    }
+		    // echo "<pre>";
+		    // 	var_dump($data);
+		    // echo "</pre>";
+		    
+		    $this->Sidang_model->insert_excel($data);
+		    $this->session->set_flashdata('message', 'Berhasil ditambah!');
+			redirect('administrator/Sidang/detail/'.$idS);
+        }else{
+        	echo $this->upload->display_errors();
+        }
+	}
 }

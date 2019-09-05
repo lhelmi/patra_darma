@@ -30,7 +30,7 @@ class Dashboard extends CI_Controller {
 			$this->db->set('terbaca', '1');
 	        $this->db->where('admin_notif_id', $id);
 	        $this->db->update('admin_notif');
-	        redirect('administrator/Hubungi_kami/kirim_email/'. $idh);	
+	        redirect('administrator/hubungi_kami/kirim_email/'. $idh);	
 		}
     	
     }
@@ -43,7 +43,7 @@ class Dashboard extends CI_Controller {
 	    	$this->db->set('terbaca', '1');
 	        $this->db->where('pengacara_notif_id', $id);
 	        $this->db->update('pengacara_notif');
-	        redirect('administrator/Hubungi_kami/kirim_email/'. $idh);
+	        redirect('administrator/hubungi_kami/kirim_email/'. $idh);
 		}
     }
 }

@@ -52,10 +52,40 @@
     </div>
 </div>
 
+
+<div id="excel-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="frmidx" action="<?= site_url('administrator/Sidang/excel'); ?>" enctype="multipart/form-data" method="POST">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Import Data</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" value="<?= $IdSidang ?>" class="form-control" id="IdSidang" name="IdSidang">
+                    
+                    <input type="file" name="inexcel">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-inverse waves-effect" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                        <span>Batal</span>
+                    </button>
+                    <button type="submit" name="submit" id="submit" class="btn btn-success waves-effect waves-light">
+                        <i class="fa fa-check"></i>
+                        <span>Simpan</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
     $(function(){
 
     const flashdata = $('.flash-data').data('flash');
+    
     if (flashdata) {
         swal({
             title: 'Data ' + '<?= $title ?>',
