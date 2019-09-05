@@ -15,6 +15,8 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <div class="flash-data" data-flash = "<?= $this->session->flashdata('message') ?>"></div>
+                    <?= $this->session->flashdata('pesan'); ?>
+                    
                     <div class="wow" style="margin-bottom: 10px">
                         <a href="<?= base_url('administrator/Sidang/add') ?>" type="button" class="btn btn-success waves-effect waves-light m-r-10">
                             <i class="fa fa-plus m-r-5"></i>

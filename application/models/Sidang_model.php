@@ -63,12 +63,15 @@ class Sidang_model extends CI_Model
 
 	function dashboard()
 	{	
+		$this->db->select('*');
+		$this->db->select('detailsidang.keterangan as detailket ');
+		$this->db->from('detailsidang');
 		$this->db->join('sidang', 'detailsidang.IdSidang = sidang.IdSidang');
     	$this->db->join('klien', 'Sidang.IdKlien = klien.IdKlien');
     	$this->db->join('pengacara', 'detailsidang.IdPengacara = pengacara.IdPengacara');
     	$this->db->order_by('detailsidang.tanggal', 'ASC');
     	
-		return $this->db->get('detailsidang')->result_array();
+		return $this->db->get()->result_array();
 	}
 
 	function get_klient_by_id($id)
@@ -108,6 +111,11 @@ class Sidang_model extends CI_Model
 	function insert_detailsidang($data)
 	{	
 		$this->db->insert('detailsidang', $data);
+	}
+
+	function insert_excel($data)
+	{	
+		$this->db->insert_batch('detailsidang', $data);
 	}
 
 	function update_klien($id, $data)

@@ -62,10 +62,10 @@
                 <h3 class="box-title m-b-0">Ubah Password</h3>
                 <small>Masukan password baru anda</small>
 
-                <form class="form-horizontal new-lg-form" id="loginform" method="post" action="<?= base_url('lupapassword/ubah'); ?>">
+                <form class="form-horizontal new-lg-form" id="loginform" method="post" action="<?= base_url('lupapassword/lupapass/'. $hash); ?>">
                     <?= $this->session->flashdata('message'); ?>
-
-                    <input type="text" name="id" value="<?= $id ?>" hidden>
+                    
+                    <input type="hidden" name="id" value="<?= $id ?>">
 
                     <div class="form-group">
                         <div class="col-xs-12">

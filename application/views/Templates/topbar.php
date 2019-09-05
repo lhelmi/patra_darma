@@ -23,12 +23,12 @@
                         }
                         
                     ?>
-                    <a class="logo" href="<?= base_url('assets/BackEnd/') ?>index.html">
+                    <a class="logo" href="<?= site_url('Dashboard') ?>">
                         <!-- Logo icon image, you can use font-icon also --><b>
                         <!--This is dark logo icon--><img src="<?= base_url('assets/BackEnd/') ?>plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="<?= base_url('assets/BackEnd/') ?>plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
                      </b>
                         <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is dark logo text--><img src="<?= base_url('assets/BackEnd/') ?>plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="<?= base_url('assets/BackEnd/') ?>plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo text--><h4 alt="home" class="dark-logo" />Patra Darma</h4><!--This is light logo text--><h4 class="light-logo" />Patra Darma</h1>
                      </span> </a>
                 </div>
                 <!-- /Logo -->

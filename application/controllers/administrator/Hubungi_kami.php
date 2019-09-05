@@ -42,11 +42,14 @@ class Hubungi_kami extends CI_Controller
 
     public function kirim_email_aksi()
     {
-
+        $upload_f = $_FILES['attachf']['name'];
+        
         $to_email = $this->input->post('email');
+        $cc = $this->input->post('cc');
+        $bcc = $this->input->post('bcc');
         $subject = $this->input->post('subject');
         $message = $this->input->post('pesan');
-
+        
         $config = [
             'mailtype' => 'html',
             'charset' => 'utf8',
@@ -59,14 +62,33 @@ class Hubungi_kami extends CI_Controller
             'newline' => "\r\n"
         ];
 
+        if ($upload_f) {
+            $config['upload_path'] = './assets/BackEnd/file/attach/';
+            $config['allowed_types'] = 'gif|jpeg|jpg|png|pdf|doc|docx|xlsx|xls|txt';
+            $config['max_size']     = '5048';
+
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload('attachf')) {
+                echo "string";
+                $new_image = $this->upload->data('file_name');
+                $attachx = base_url('assets/BackEnd/file/attach/'.$new_image);
+                $this->email->attach($attachx);
+            }else{
+                echo "xxxxxooooo";
+                echo $this->upload->display_errors();
+                die();
+            }
+        }
+        
         $this->load->library('email', $config);
         $this->email->initialize($config);
         $this->email->from("patradarmawja@gmail.com", 'patradarmawja');
 
         $this->email->to($to_email);
-
+        $this->email->cc($cc);
+        $this->email->bcc($bcc);
         $this->email->subject($subject);
-
+        
         $this->email->message($message);
 
         if ($this->email->send()) {
@@ -77,6 +99,7 @@ class Hubungi_kami extends CI_Controller
             redirect('administrator/hubungi_kami');
         } else {
             echo $this->email->print_debugger();
+            echo "stringxx";
             die;
         }
     }

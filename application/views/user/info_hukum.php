@@ -33,7 +33,7 @@
 				<div class="col-lg-4 col-md-12 home-about-right relative">
 					<form method="post" action="<?php echo base_url('user/info_hukum/kirim_pesan') ?>" class="form-wrap">
 						<?php echo $this->session->flashdata('pesan') ?>
-						<h4 class="text-white pb-20">Request a Quote</h4>
+						<h4 class="text-white pb-20">Konsultasi Disini</h4>
 						<?php echo form_error('kategori', '<small class="text-danger pl-3">', '</small><br>'); ?>
 						<?php echo form_error('nama', '<small class="text-danger pl-3">', '</small><br>'); ?>
 						<?php echo form_error('email', '<small class="text-danger pl-3">', '</small><br>'); ?>
@@ -48,15 +48,15 @@
 								<option value="Pertanahan dan Property">Pertanahan dan Property</option>
 								<option value="Lainnya">Lainnya</option>
 							</select>
-							
+
 						</div>
-						<input type="text" name="nama" class="form-control" placeholder="name">
-						
+						<input type="text" name="nama" class="form-control" placeholder="Nama">
+
 						<!-- <input type="phone" class="form-control" placeholder="Phone Number"> -->
-						<input type="text" name="email" class="form-control" placeholder="Email Address">
-						
-						<textarea type="text" name="pesan" id="" cols="30" rows="5" placeholder="Message" class="form-control"></textarea>
-						
+						<input type="text" name="email" class="form-control" placeholder="Email">
+
+						<textarea type="text" name="pesan" id="" cols="30" rows="5" placeholder="Pesan" class="form-control"></textarea>
+
 						<button type="submit" class="primary-btn">Kirim Pesan</button>
 					</form>
 				</div>
@@ -108,7 +108,7 @@
 				<div class="col-md-12 pb-30 header-text text-center">
 					<h1 class="mb-10">Kategori Permasalah Hukum</h1>
 					<p>
-						Who are in extremely love with eco friendly system..
+
 					</p>
 				</div>
 			</div>
@@ -198,9 +198,9 @@
 						<div class="circle">
 							<div class="inner"></div>
 						</div>
-						<h5><span class="counter">2</span>K+</h5>
+						<h5><span class="counter">Firma </span>Hukum</h5>
 						<p>
-							Projects Completed
+
 						</p>
 					</div>
 				</div>
@@ -209,9 +209,9 @@
 						<div class="circle">
 							<div class="inner"></div>
 						</div>
-						<h5><span class="counter">5.5</span>K</h5>
+						<h5><span class="counter">Minyak </span> dan Gas</h5>
 						<p>
-							Total Employees
+
 						</p>
 					</div>
 				</div>
@@ -220,9 +220,9 @@
 						<div class="circle">
 							<div class="inner"></div>
 						</div>
-						<h5 class="counter">959</h5>
+						<h5 class="counter">Ferdinal Travel</h5>
 						<p>
-							Happy Clients
+
 						</p>
 					</div>
 				</div>
@@ -231,9 +231,9 @@
 						<div class="circle">
 							<div class="inner"></div>
 						</div>
-						<h5 class="counter">367</h5>
+						<h5 class="counter">Ferdinal Logistik</h5>
 						<p>
-							Tickets Submited
+
 						</p>
 					</div>
 				</div>
@@ -241,4 +241,3 @@
 		</div>
 	</section>
 	<!-- End faq Area -->
-

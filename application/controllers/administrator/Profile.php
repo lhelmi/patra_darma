@@ -26,7 +26,7 @@ class Profile extends CI_Controller {
 		$idp = $this->session->userdata('id');
 		$this->form_validation->set_rules('Nama', 'Nama', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
 		if ($this->input->post('Email',TRUE) <> $this->session->userdata('email')) {
-			$this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email|is_unique[admin.email]|min_length[12]|max_length[30]',
+			$this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email|is_unique[admin.email]|is_unique[pengacara.email]|is_unique[klien.EmailKlien]|min_length[12]|max_length[30]',
 	    		[
 		    		'required' => '*Field Tidak Boleh Kosong',
 		    		'is_unique' => 'Email Sudah digunakan',

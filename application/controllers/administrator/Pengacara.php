@@ -36,7 +36,7 @@ class Pengacara extends CI_Controller {
 		$data['IdPeng'] = $this->Pengacara_model->get_kode();
 		$data['password'] = base64_encode(random_bytes(8));
 
-		$this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email|is_unique[pengacara.email]|min_length[12]|max_length[30]',
+		$this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email|is_unique[pengacara.email]|is_unique[admin.Email]|is_unique[klien.EmailKlien]|min_length[12]|max_length[30]',
     		[
 	    		'required' => '*Field Tidak Boleh Kosong',
 	    		'is_unique' => 'Email Sudah digunakan',
@@ -123,7 +123,7 @@ class Pengacara extends CI_Controller {
 			$this->_rules();
 			$this->form_validation->set_rules('NamaBk1[]', 'NamaBk1[]', 'trim|required', ['required' => '*Field Tidak Boleh Kosong'] );
 			if ($this->input->post('Email',TRUE) <> $row->Email) {
-				$this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email|is_unique[pengacara.email]|min_length[12]|max_length[30]',
+				$this->form_validation->set_rules('Email', 'Email', 'trim|required|valid_email|is_unique[pengacara.email]|is_unique[admin.Email]|is_unique[klien.EmailKlien]|min_length[12]|max_length[30]',
 		    		[
 			    		'required' => '*Field Tidak Boleh Kosong',
 			    		'is_unique' => 'Email Sudah digunakan',
@@ -246,8 +246,8 @@ class Pengacara extends CI_Controller {
     {
     	$to_email = $this->input->post('Email');
     	$pass = $this->input->post('password',TRUE);
-        $subject = "Hai.. Berikut detail akun anda, email : " .$to_email. " password : " .$pass;
-        $message = "";
+        $subject = "Password akun patradarma";
+        $message = "Hai.. Berikut detail akun anda, email : " .$to_email. " password : " .$pass;
 
         $config = [
             'mailtype' => 'html',

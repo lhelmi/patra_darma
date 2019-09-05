@@ -12,8 +12,8 @@
                         </ul>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
-                        <a href="tel:+880 012 3654 896">+880 012 3654 896</a>
-                        <a href="mailto:support@colorlib.com">patrawijaya@gmail.com</a>
+                        <a href="tel:+880 012 3654 896"></a>
+                        <a href="mailto:support@colorlib.com">patradarmawja@gmail.com</a>
                     </div>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                         </li>
                         <li><a href="<?php echo base_url('user/konsultasi') ?>">Konsultasi</a></li>
                         <?php
-                            if (!empty($this->session->userdata('id'))) {
-                        ?>
+                        if (!empty($this->session->userdata('id'))) {
+                            ?>
                             <li><a href="<?php echo base_url('Dashboard') ?>">Dashboard</a></li>
-                        <?php }else{ ?>
+                        <?php } else { ?>
                             <li><a href="<?php echo base_url('login') ?>">Login</a></li>
                         <?php } ?>
 
